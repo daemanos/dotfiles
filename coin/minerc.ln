@@ -1,0 +1,7 @@
+{
+  "user": "DPf47BEExwdaQ1LMEE7JXAgfwxtvmeuRm1",
+  "pass": "x",
+  "url": "stratum+tcp://stratum.teamdoge.com:3000",
+  "intensity": "12",
+  "text-only": true
+}

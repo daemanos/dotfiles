@@ -1,0 +1,9 @@
+[core]
+	excludesfile = ~/.gitignore
+[user]
+	name = Octaplex
+	email = damanm72@gmail.com
+[credential]
+	helper = cache
+[push]
+	default = simple

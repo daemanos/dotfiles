@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+# in the beginning, all of the dotfiles were compressed into a single git
+# repository of infinite density...
+
+cd "$(dirname "$0")/.."
+UNIVERSE=$(pwd)
+
+set -e
+echo ''
+
+bang() {
+    for src in $(find "$UNIVERSE" -maxdepth 2 -name '*.ln'); do
+        ln -s "$src" "$HOME/.$(basename "${src%.*}")"
+    done
+}
