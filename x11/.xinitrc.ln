@@ -1,2 +1,3 @@
 xflux &
-exec tdm --xstart
+xautolock -locker ~/.local/bin/i3lock &
+exec /usr/bin/i3
