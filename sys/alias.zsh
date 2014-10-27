@@ -14,13 +14,6 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
-# pacman
-alias pacs='pacaur -S'
-alias pacu='pacaur -U'
-alias pacq='pacaur -Q'
-alias pacr='pacaur -R'
-alias pacro='[[ $(pacaur -Qqdt) -eq "" ]] && echo nothing to do || pacaur -Rs $(pacaur -Qqdt)'
-
 # misc system commands
 alias ping='ping -c 5'
 alias dmesg='dmesg -HL'

@@ -7,3 +7,10 @@ if exists('$HAX')
 else
     colorscheme bubblegum
 endif
+set colorcolumn=80
+set number
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+match ColorColumn /\s\+$/

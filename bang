@@ -1,0 +1,22 @@
+#!/usr/bin/bash
+
+# usage: bang <dir> <target>
+bang() {
+    mkdir -p $2
+    for link in $(find $1 -mindepth 1 -maxdepth 1 -name '*.ln' -type f); do
+        target=$(basename $link .ln)
+        echo "$link -> $2/$target"
+        ln -fs $link $2/$target
+    done
+    for subdir in $(find $1 -mindepth 1 -maxdepth 1 ! -path '*.git*' -type d); do
+        if [[ -e $subdir/.target ]]; then
+            # echo "descending into $subdir (target: $2/$(cat $subdir/.target))"
+            bang $subdir $2/$(cat $subdir/.target)
+        else
+            # echo "descending into $subdir (target: $2)"
+            bang $subdir $2
+        fi
+    done
+}
+
+bang ${1:-$HOME/.dot} ${2:-$HOME}

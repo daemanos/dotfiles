@@ -1,0 +1,23 @@
+URxvt.font: xft:Inconsolata\\-dz:style=dz:size=8
+URxvt.scrollBar: false
+
+URxvt.background: #262626
+URxvt.foreground: #d6d6d6
+
+URxvt.color0:  #000000
+URxvt.color1:  #d75f5f
+URxvt.color2:  #5faf87
+URxvt.color3:  #ff875f
+URxvt.color4:  #87afff
+URxvt.color5:  #afafff
+URxvt.color6:  #5fafd7
+URxvt.color7:  #d6d6d6
+
+URxvt.color8:  #a8a8a8
+URxvt.color9:  #d75f5f
+URxvt.color10: #5faf87
+URxvt.color11: #ff875f
+URxvt.color12: #87afff
+URxvt.color13: #afafff
+URxvt.color14: #5fafd7
+URxvt.color15: #ffffff

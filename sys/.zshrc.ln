@@ -10,18 +10,18 @@ typeset -U cfgs
 cfgs=($DOT/**/*.zsh)
 
 # path files come first
-for fn in ${(M)config_files:#*/path.zsh}; do
+for fn in ${(M)cfgs:#*/path.zsh}; do
     source $fn
 done
 
 # then everything else, minus the completion files
-for fn in ${${config_files:#*/path.zsh}:#*/complete.zsh}; do
+for fn in ${${cfgs:#*/path.zsh}:#*/complete.zsh}; do
     source $fn
 done
 
 # finally, autocomplete files
 autoload -U compinit && compinit
-for fn in ${(M)config_files:#*/complete.zsh}; do
+for fn in ${(M)cfgs:#*/complete.zsh}; do
     source $fn
 done
 

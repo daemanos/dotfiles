@@ -22,3 +22,4 @@ Plugin 'bling/vim-airline'
 Plugin 'edkolev/tmuxline.vim'
 
 call vundle#end()
+filetype plugin indent on
