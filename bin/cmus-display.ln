@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+
+require 'libnotify'
+
+infos = Hash[ARGV.each_slice(2).to_a]
+exit if infos['status'] != 'playing'
+notification = Libnotify.new do |notify|
+  notify.summary   = infos['title'] || 'Untitled Track'
+  notify.body      = infos['album'] || 'Unknown Album'
+  notify.urgency   = :normal
+  notify.append    = true
+  notify.transient = true
+end
+notification.show!
