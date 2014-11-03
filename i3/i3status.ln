@@ -32,5 +32,5 @@ cpu_usage {
 }
 
 tztime local {
-    format = " %I:%M %p "
+    format = "  %I:%M %p | %Y-%m-%d"
 }
