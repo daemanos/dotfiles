@@ -1,3 +1,4 @@
-xflux &
+xflux -z 15228 &
 xautolock -locker ~/.local/bin/i3lock &
+exec ~/.fehbg &
 exec /usr/bin/i3
