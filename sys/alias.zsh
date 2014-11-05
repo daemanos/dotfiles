@@ -1,8 +1,9 @@
 # file/directory operations
 alias mkdir='mkdir -pv'
-alias ls='ls -hF --color --group-directories-first'
+alias ls='ls -hHF --color --group-directories-first'
 alias la='ls -A'
 alias ll='ls -l'
+alias lal='ls -Al'
 alias lf='ls -1 | wc -1'
 alias untar='tar -xvf'
 
@@ -17,11 +18,14 @@ alias chgrp='chgrp --preserve-root'
 # pacman
 alias pac='pacaur --noedit'
 alias pacs='pac -S'
+alias paci='pac -Si'
 alias pacr='pac -R'
 alias pacq='pac -Q'
-alias pacu='pac -Syyu'
-alias paco='pac -Qqdt --color=never'
-alias pacoj='pacr $(paco)'
+alias pacls='pac -Ql'
+alias pacil='pac -Qi'
+alias pacu='pac -Syu'
+alias paco='pac -Qqdt'
+alias pacro='pac -R $(paco)'
 alias pacad='pac -D --asexplicit'
 
 # misc system commands
@@ -30,3 +34,4 @@ alias dmesg='dmesg -HL'
 alias grep='grep --color'
 alias more='less' # more is less, after all
 alias cls=' echo -ne "\033c"' # clear the screen
+alias handbrake='HandBrakeCLI' # I love you handbrake, but wtf
