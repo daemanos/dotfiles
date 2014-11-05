@@ -11,7 +11,7 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -fn "Inconsolata-dz 8" -nb "#2d2d2d" -nf "#767676" -sb "#2d2d2d" -sf "#fff"'
 
 # miscellaneous special programs
 bindsym $mod+p exec cmus-remote -u
