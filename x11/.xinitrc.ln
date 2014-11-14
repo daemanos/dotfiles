@@ -1,4 +1,5 @@
+xrdb ~/.Xresources &
 xflux -z 15228 &
 xautolock -locker ~/.local/bin/i3lock &
-exec ~/.fehbg &
+~/.deskset &
 exec /usr/bin/i3
