@@ -1,0 +1,171 @@
+#!/usr/bin/env ruby
+# mced - configure Minecraft from the command line
+
+require 'optparse'
+require 'json'
+
+$profile = 'Vanilla'
+$select = false
+$src = File.expand_path('~/.minecraft/launcher_profiles.json')
+$mod = Hash.new
+$verbose = false
+$list = false
+$queued = false
+$queue = {
+  add: [],
+  remove: []
+}
+
+def die(reason = 'something went wrong')
+  puts "\e[1;31merror:\e[0m #{reason}"
+end
+
+OptionParser.new do |opts|
+  opts.banner = <<-eos
+usage: mced -p PROFILE [options]
+
+Options:
+  -p, --profile PROFILE      Set the profile to modify
+      --profiles FILE        Modify FILE instead of the default profiles file
+  -s, --select               Select the given profile
+  -l, --list                 Don't modify any properties, just pretty-print the
+                             profile information
+  -n, --name NAME            Rename the given profile
+  -d, --game-dir DIR         Set the game directory to DIR
+  -i, --last-version-id ID   Set the game version to ID
+      --java-dir             Set the directory from which to launch java
+      --java-args            Set the command line args to be passed to java
+  -r, --resolution RES       Set the game resolution (in format WIDTHxHEIGHT).
+  -t, --release-types TYPES  Set the release types which the given profile
+                             should allow (as comma-separated list)
+      --[no-]crash-service   Disable or enable the hopper crash service
+  -V, --visibility VIS       Set how the launcher should behave when the game
+                             closes (either `close`, `keep`, or `hide`)
+  -m, --add-mod MODS         Add MODS (a comma-separated list) to the mods/
+                             folder
+  -M, --rm-mod MODS          Remove MODS (a comma-separated list) from the
+                             mods/ folder
+
+  -h, --help                 Print this message and exit
+      --version              Print version information and exit
+  -v, --verbose              Print extra information
+  eos
+
+  opts.on('-p', "--profile PROFILE") do |profile|
+    $profile = profile
+  end
+  opts.on('--profiles FILE') do |file|
+    $src = file
+  end
+  opts.on('-l', '--list') do
+    $list = true
+  end
+
+  opts.on('-s', "--select") do
+    $select = true
+  end
+  opts.on('-n', "--name NAME") do |name|
+    $mod['name'] = name
+  end
+  opts.on('-d', "--game-dir DIR") do |dir|
+    $mod['gameDir'] = dir
+  end
+  opts.on('-i', "--last-version-id ID") do |id|
+    $mod['lastVersionId'] = id
+  end
+  opts.on("--java-dir DIR") do |dir|
+    $mod['javaDir'] = dir
+  end
+  opts.on("--java-args ARGS") do |args|
+    $mod['javaArgs'] = args
+  end
+  opts.on('-r', "--resolution RES") do |res|
+    mat = res.match(/(\d+)x(\d+)/)
+    if mat
+      $mod['resolution'] = { width: mat[1].to_i, height: mat[2].to_i }
+    else
+      die "bad resolution: #{res}"
+      exit
+    end
+  end
+  opts.on('-t', "--release-types TYPES") do |typesr|
+    types = typesr.split(',')
+    $mod['allowedReleaseTypes'] = types unless types.empty?
+  end
+  opts.on("--[no-]crash-service") do |cs|
+    $mod['useHopperCrashService'] = cs
+  end
+  opts.on('-V', "--visibility VIS") do |vis|
+    $mod['launcherVisibilityOnGameClose'] =
+      case vis.downcase
+      when 'close'
+        'close launcher when game starts'
+      when 'keep'
+        'keep the launcher open'
+      when 'hide'
+        'hide launcher and re-open when game closes'
+      else
+        die "bad visibility: #{vis}"
+        exit
+      end
+  end
+  opts.on('-m', "--add-mod MODS") do |modsr|
+    mods = modsr.split(',')
+    $queued = true
+    $queue[:add] = mods unless mods.empty?
+  end
+  opts.on('-M', "--rm-mod MODS") do |modsr|
+    mods = modsr.split(',')
+    $queued = true
+    $queue[:remove] = mods unless mods.empty?
+  end
+
+  opts.on('-v', '--verbose') do
+    $verbose = true
+  end
+  opts.on_tail('-h', '--help') do
+    puts opts.banner
+    exit
+  end
+  opts.on_tail('--version') do
+    puts 'mced v1.0.0'
+    exit
+  end
+
+end.parse!
+
+$data = JSON.parse(File.read($src))
+$ptbl = $data['profiles'][$profile]
+
+if $list
+  puts JSON.pretty_generate($ptbl)
+  exit
+end
+
+if $select
+  $data['selectedProfile'] = $profile
+  puts "select #$profile" if $verbose
+end
+
+$mod.each do |key, val|
+  puts "#$profile/#{key} => #{val}" if $verbose
+  $ptbl[key.to_s] = val
+end
+if $queued and $ptbl['lastVersionId'][-1] == 'f'
+  modpath = File.join($minecraft, 'mods')
+  profilepath = $ptbl['gameDir']
+  $queued[:add].each do |modname|
+    mod = File.join(modpath, "#{modname}.jar")
+    FileUtils.cp mod, profilepath if File.exists?(mod)
+  end
+  $queued[:remove].each do |modname|
+    mod = File.join(profilepath, "#{modname}.jar")
+    FileUtils.rm mod if File.exists?(mod)
+  end
+else
+  die 'the selected profile does not support mods'
+  exit
+end
+
+
+File.write($src, JSON.pretty_generate($data))
