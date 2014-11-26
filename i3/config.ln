@@ -14,15 +14,16 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -fn "Inconsolata-dz 8" -nb "#2d2d2d" -nf "#767676" -sb "#2d2d2d" -sf "#fff"'
 
 # miscellaneous special programs
-bindsym $mod+p exec cmus-remote -u
-bindsym $mod+b exec cmus-remote -r
-bindsym $mod+n exec cmus-remote -n
+bindsym $mod+o exec chromium
 bindsym $mod+z exec i3lock -c 262626
 
-# volume control
-bindsym $mod+Shift+comma      exec amixer sset Master 1%-
-bindsym $mod+Shift+period     exec amixer sset Master 1%+
-bindsym $mod+Shift+slash      exec amixer sset Master toggle
+# media control
+bindsym $mod+p            exec cmus-remote -u
+bindsym $mod+b            exec cmus-remote -r
+bindsym $mod+n            exec cmus-remote -n
+bindsym $mod+Shift+comma  exec amixer sset Master 1%-
+bindsym $mod+Shift+period exec amixer sset Master 1%+
+bindsym $mod+Shift+slash  exec amixer sset Master toggle
 
 # rename
 bindsym $mod+Shift+n exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
