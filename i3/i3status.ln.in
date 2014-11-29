@@ -8,7 +8,7 @@ order += "wireless net0"
 order += "volume master"
 order += "disk /"
 order += "cpu_usage"
-order += "battery 1"
+[[BATTERY:?order += "battery 1"]]
 order += "tztime local"
 
 wireless net0 {

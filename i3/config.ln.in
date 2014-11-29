@@ -15,15 +15,16 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -fn "Inco
 
 # miscellaneous special programs
 bindsym $mod+o exec chromium
-bindsym XF86Sleep exec i3lock -c 262626
+bindsym [[SLEEP_KEY:$mod+z?XF86Sleep]] exec i3lock -c 262626
 
 # media control
-bindsym XF86AudioPlay                   exec cmus-remote -u
-bindsym XF86AudioPrev                   exec cmus-remote -r
-bindsym XF86AudioNext                   exec cmus-remote -n
-bindsym XF86AudioLowerVolume  exec amixer sset Master 1%-
-bindsym XF86AudioRaiseVolume exec amixer sset Master 1%+
-bindsym XF86AudioMute         exec amixer sset Master toggle
+bindsym [[MEDIA_KEYS:$mod+p?XF86AudioPlay]] exec cmus-remote -u
+bindsym [[MEDIA_KEYS:$mod+b?XF86AudioPrev]] exec cmus-remote -r
+bindsym [[MEDIA_KEYS:$mod+n?XF86AudioNext]] exec cmus-remote -n
+[[MEDIA_KEYS:?bindsym XF86AudioStop exec cmus-remote -s]]
+bindsym [[MEDIA_KEYS:$mod+Shift+comma?XF86AudioLowerVolume]]  exec amixer sset Master 1%-
+bindsym [[MEDIA_KEYS:$mod+Shift+period?XF86AudioRaiseVolume]] exec amixer sset Master 1%+
+bindsym [[MEDIA_KEYS:$mod+Shift+slash?XF86AudioMute]]         exec amixer sset Master toggle
 
 # rename
 bindsym $mod+Shift+n exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
@@ -111,10 +112,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt

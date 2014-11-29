@@ -1,8 +1,30 @@
 #!/usr/bin/bash
 
+declare -A SWITCHES
+SWITCHES[MEDIA_KEYS]=["$(xmodmap -pke | grep XF86Audio)"]
+SWITCHES[SLEEP_KEY]=["$(xmodmap -pke | grep XF86Sleep)"]
+SWITCHES[BATTERY]=["$(ls /sys/class/power_supply | grep BAT)"]
+
+declare -a PATS
+ind=0
+for switch in ${!SWITCHES[@]}; do
+    if [ $switch ]; then
+        PATS[$ind]="-e s/\[\[$switch:(.*)\?(.*)\]\]/\2/g"
+    else
+        PATS[$ind]="-e s/\[\[$switch:(.*)\?(.*)\]\]/\1/g"
+    fi
+    ind=$ind+1
+done
+
 # usage: bang <dir> <target>
 bang() {
     mkdir -p $2
+    for input in $(find $1 -mindepth 1 -maxdepth 1 -name '*.in' -type f); do
+        out=${input%%.in}
+        src=$input
+        #echo "sed -r ${PATS[*]} <$src >$out"
+        sed -r ${PATS[*]} <$src >$out
+    done
     for link in $(find $1 -mindepth 1 -maxdepth 1 -name '*.ln' -type f); do
         target=$(basename $link .ln)
         echo "$link -> $2/$target"
@@ -10,10 +32,8 @@ bang() {
     done
     for subdir in $(find $1 -mindepth 1 -maxdepth 1 ! -path '*.git*' -type d); do
         if [[ -e $subdir/.target ]]; then
-            # echo "descending into $subdir (target: $2/$(cat $subdir/.target))"
             bang $subdir $2/$(cat $subdir/.target)
         else
-            # echo "descending into $subdir (target: $2)"
             bang $subdir $2
         fi
     done
