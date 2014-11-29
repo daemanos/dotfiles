@@ -1,2 +1,2 @@
 #!/bin/bash
-feh  --bg-${BG_TYPE:-fill} '/home/daman/Pictures/desktop.png'
+feh  --bg-${BG_TYPE:-fill} "/home/$USER/Pictures/desktop"
