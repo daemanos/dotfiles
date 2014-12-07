@@ -13,7 +13,12 @@ current file without the `.ln` extension prefixed with a dot. If no link
 expression is present, then the target file is simply the name of the file
 without the `.ln` extension. The variable `$name` is available to link
 expressions, which evaluates to the default target, i.e., the name of the file
-without the `.ln` extension.
+without the `.ln` extension. Because the first line will not be stripped out,
+it is usually necessary to ensure that it is not interpreted by anything, e.g.,
+in a comment. In cases where the first line must be something other than a
+link expression, e.g., with executable files, a file of the form `$name.target`
+may appear in the same directory as a link file whose contents are treated as
+the `expr` portion of a link expression.
 
 The target directory is defined by a `.target` file in the directory in which
 a `.ln` file resides. The contents of this file are `eval`ed and set equal to
