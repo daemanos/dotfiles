@@ -1,8 +1,8 @@
 Overview
---------
+========
 
 Link Files
-==========
+----------
 
 Link files, with an extension of `.ln`, will be symlinked into places where
 your programs expect them to be. If the first line of a link file contains a
@@ -25,7 +25,7 @@ a `.target` file must exist at the dotfile root. (Usually, this will be an
 absolute path to the home directory.)
 
 Input Files
-===========
+-----------
 
 Input files allow automatically generated dotfile differences based on system
 configuration or hardware availability. The `resolve` utility will resolve all
