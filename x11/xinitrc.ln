@@ -1,3 +1,4 @@
+# link:dot
 xrdb ~/.Xresources &
 xflux -z 15228 &
 xautolock -locker ~/.local/bin/i3lock &

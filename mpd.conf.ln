@@ -1,0 +1,8 @@
+# link:.config/mpd/mpd.conf
+music_directory	   "~/music"
+playlist_directory "~/.config/mpd/pl"
+db_file	           "~/.config/mpd/db"
+log_file           "~/.config/mpd/log"
+pid_file           "~/.config/mpd/pid"
+state_file         "~/.config/mpd/state"
+sticker_file       "~/.config/mpd/sticker.sql"

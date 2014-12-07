@@ -1,0 +1,40 @@
+#!/bin/bash
+source ./conds.sh
+source ./vars.sh
+
+declare -a PATS
+ind=0
+for switch in ${!SWITCHES[@]}; do
+    if [ "${SWITCHES[$switch]}" ]; then
+        PATS[$ind]="-e s/\[\[$switch:(.*)\?(.*)\]\]/\2/g"
+    else
+        PATS[$ind]="-e s/\[\[$switch:(.*)\?(.*)\]\]/\1/g"
+    fi
+    ind=$ind+1
+done
+for var in ${!VARS[@]}; do
+    PATS[$ind]="-e s/{{$var}}/${VARS[$var]}/g"
+    ind=$ind+1
+done
+
+go=true
+while getopts ":d" opt; do
+    case "$opt" in
+        d)
+            go=false
+            ;;
+        \?)
+            echo "usage: resolve [-d]"
+            exit 1
+            ;;
+    esac
+done
+shift $((OPTIND-1))
+
+for input in $(find ${1:-$HOME/.dot} -mindepth 1 -name '*.in' -type f); do
+    output=${input%%.in}
+    echo "$input → $output"
+    if $go; then
+        sed -r ${PATS[*]} <$input >$output
+    fi
+done

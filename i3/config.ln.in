@@ -15,16 +15,16 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -fn "Inco
 
 # miscellaneous special programs
 bindsym $mod+o exec chromium
-bindsym [[SLEEP_KEY:$mod+z?XF86Sleep]] exec i3lock -c 262626
+bindsym [[SLEEP_KEY:$mod+z?XF86Sleep]] exec --no-startup-id ~/.local/bin/i3lock
 
 # media control
-bindsym [[MEDIA_KEYS:$mod+p?XF86AudioPlay]] exec cmus-remote -u
-bindsym [[MEDIA_KEYS:$mod+b?XF86AudioPrev]] exec cmus-remote -r
-bindsym [[MEDIA_KEYS:$mod+n?XF86AudioNext]] exec cmus-remote -n
-[[MEDIA_KEYS:?bindsym XF86AudioStop exec cmus-remote -s]]
-bindsym [[MEDIA_KEYS:$mod+Shift+comma?XF86AudioLowerVolume]]  exec amixer sset Master 1%-
-bindsym [[MEDIA_KEYS:$mod+Shift+period?XF86AudioRaiseVolume]] exec amixer sset Master 1%+
-bindsym [[MEDIA_KEYS:$mod+Shift+slash?XF86AudioMute]]         exec amixer sset Master toggle
+bindsym [[MEDIA_KEYS:$mod+p?XF86AudioPlay]] exec --no-startup-id cmus-remote -u
+bindsym [[MEDIA_KEYS:$mod+b?XF86AudioPrev]] exec --no-startup-id cmus-remote -r
+bindsym [[MEDIA_KEYS:$mod+n?XF86AudioNext]] exec --no-startup-id cmus-remote -n
+[[MEDIA_KEYS:?bindsym XF86AudioStop exec --no-startup-id cmus-remote -s]]
+bindsym [[MEDIA_KEYS:$mod+Shift+comma?XF86AudioLowerVolume]]  exec --no-startup-id amixer sset Master 1%-
+bindsym [[MEDIA_KEYS:$mod+Shift+period?XF86AudioRaiseVolume]] exec --no-startup-id amixer sset Master 1%+
+bindsym [[MEDIA_KEYS:$mod+Shift+slash?XF86AudioMute]]         exec --no-startup-id amixer sset Master toggle
 
 # rename
 bindsym $mod+Shift+n exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
@@ -102,7 +102,9 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -f 'pango:Inconsolata-dz 8' -t warning -m 'Are you sure you want to exit i3?' -b Yes 'i3-msg exit'"
+# system shutdown
+bindsym $mod+Shift+d exec "i3-nagbar -f 'pango:Inconsolata-dz 8' -m 'What do you want to do?' -b Poweroff 'systemctl poweroff' -b Reboot 'systemctl reboot'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

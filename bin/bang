@@ -1,0 +1,72 @@
+#!/usr/bin/bash
+
+declare -A SWITCHES
+#SWITCHES[MEDIA_KEYS]="$(xmodmap -pke | grep XF86Audio)"
+SWITCHES[MEDIA_KEYS]=""
+#SWITCHES[SLEEP_KEY]="$(xmodmap -pke | grep XF86Sleep)"
+SWITCHES[SLEEP_KEY]=""
+SWITCHES[BATTERY]="$(ls /sys/class/power_supply | grep BAT)"
+
+declare -a PATS
+ind=0
+for switch in ${!SWITCHES[@]}; do
+    if [ "${SWITCHES[$switch]}" ]; then
+        echo "$switch"
+        PATS[$ind]="-e s/\[\[$switch:(.*)\?(.*)\]\]/\2/g"
+    else
+        PATS[$ind]="-e s/\[\[$switch:(.*)\?(.*)\]\]/\1/g"
+    fi
+    ind=$ind+1
+done
+
+resolve=true
+update=true
+
+# options summary:
+#   -r  resolve all .in files
+#   -u  update all symlinks (.ln files)
+#   -i  install (resolve and update)
+while getopts rui opt; do
+    case "$opt" in
+        r)
+            resolve=true
+            update=false
+            ;;
+        u)
+            resolve=false
+            update=true
+            ;;
+        i)
+            resolve=true
+            update=true
+            ;;
+    esac
+done
+shift $((OPTIND-1))
+
+# usage: bang <dir>
+bang() {
+    eval PVD=$(cat $1/.target)
+    mkdir -p $PVD
+    if $resolve; then
+        for input in $(find $1 -mindepth 1 -maxdepth 1 -name '*.in' -type f); do
+            out=${input%%.in}
+            echo "$input -> $out"
+            sed -r ${PATS[*]} <$input >$out
+        done
+    fi
+    if $update; then
+        for link in $(find $1 -mindepth 1 -maxdepth 1 -name '*.ln' -type f); do
+            target=$(basename $link .ln)
+            echo "$link -> $PVD/$target"
+            ln -fs $link $PVD/$target
+        done
+    fi
+    for subdir in $(find $1 -mindepth 1 -maxdepth 1 ! -path '*.git*' -type d); do
+        eval PVD=$(cat $1/.target)
+        bang $subdir
+    done
+}
+
+DOT=$HOME/.dot
+bang ${1:-$DOT}

@@ -1,3 +1,4 @@
+# link:.config/dunst/dunstrc
 [global]
     font = Inconsolata-dz 8
 

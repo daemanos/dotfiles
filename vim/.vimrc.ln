@@ -1,7 +1,0 @@
-set nocompatible
-set wildignore+=*/build/**,*/tmp/*,*.so,*.swp,*.zip,*.aux
-
-let scripts = split(globpath(fnamemodify(resolve(expand('<sfile>:p')), ':h'), '*.vim'), "\n")
-for script in scripts
-    exec ":source " . script
-endfor

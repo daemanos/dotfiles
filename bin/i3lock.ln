@@ -1,2 +1,9 @@
 #!/bin/bash
-/usr/bin/i3lock -b -c 262626
+
+raw=$(mktemp --tmpdir i3lock-img-XXXXXXXX.png)
+blr=$(mktemp --tmpdir i3lock-img-XXXXXXXX.png)
+
+scrot -d0 "$raw"
+convert "$raw" -modulate 100,60 -blur 0x3 "$blr"
+
+/usr/bin/i3lock -i "$blr"
