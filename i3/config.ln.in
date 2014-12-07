@@ -21,10 +21,10 @@ bindsym [[SLEEP_KEY:$mod+z?XF86Sleep]] exec --no-startup-id ~/.local/bin/i3lock
 bindsym [[MEDIA_KEYS:$mod+p?XF86AudioPlay]] exec --no-startup-id cmus-remote -u
 bindsym [[MEDIA_KEYS:$mod+b?XF86AudioPrev]] exec --no-startup-id cmus-remote -r
 bindsym [[MEDIA_KEYS:$mod+n?XF86AudioNext]] exec --no-startup-id cmus-remote -n
-[[MEDIA_KEYS:?bindsym XF86AudioStop exec --no-startup-id cmus-remote -s]]
+bindsym [[MEDIA_KEYS:$mod+Shift+p?XF86AudioStop]] exec --no-startup-id cmus-remote -s
 bindsym [[MEDIA_KEYS:$mod+Shift+comma?XF86AudioLowerVolume]]  exec --no-startup-id amixer sset Master 1%-
 bindsym [[MEDIA_KEYS:$mod+Shift+period?XF86AudioRaiseVolume]] exec --no-startup-id amixer sset Master 1%+
-bindsym [[MEDIA_KEYS:$mod+Shift+slash?XF86AudioMute]]         exec --no-startup-id amixer sset Master toggle
+bindsym [[MEDIA_KEYS:$mod+Shift+slash?XF86AudioMute]] exec --no-startup-id amixer sset Master toggle
 
 # rename
 bindsym $mod+Shift+n exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
