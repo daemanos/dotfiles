@@ -1,0 +1,36 @@
+#!/usr/bin/bash
+if [[ $1 = -d || $1 = "--dry-run" ]]; then
+    go=false
+    shift
+fi
+
+link() {
+    [[ -e $1/.target ]] && eval local PVD=$(cat $1/.target)
+    for link in $1/*.ln; do
+        [[ ! -e $link ]] && continue
+        local lexpr target=$(basename $link .ln)
+        if [[ -e ${link%%.ln}.target ]]; then
+            eval lexpr=$(cat ${link%%.ln}.target)
+        else
+            lexpr=$(head -n 1 $link | sed -r 's/.*link:(.*)|.*/\1/g')
+        fi
+        [[ "$lexpr" ]] && case "$lexpr" in
+            dot)
+                target=.$target
+                ;;
+            none)
+                continue
+                ;;
+            *)
+                eval target="$lexpr"
+                ;;
+        esac
+        echo "$link → $PVD/$target"
+        #$go && ln -fs $link $PVD/$target
+    done
+    for subdir in $(find $1 -mindepth 1 -maxdepth 1 ! -path '*.git*' -type d); do
+        link $subdir
+    done
+}
+
+link ${1:-$HOME/.dot}

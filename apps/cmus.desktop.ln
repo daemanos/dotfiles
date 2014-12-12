@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Cmus
+Comment=Play music from a terminal window (in the background)
+Exec=~/.local/bin/cmus
+Terminal=true
+StartupNotify=false
