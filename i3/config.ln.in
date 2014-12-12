@@ -15,6 +15,7 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -fn "Inco
 
 # miscellaneous special programs
 bindsym $mod+o exec chromium
+bindsym $mod+m exec --no-startup-id urxvt -e ranger
 bindsym [[SLEEP_KEY:$mod+z?XF86Sleep]] exec --no-startup-id ~/.local/bin/i3lock
 
 # media control
