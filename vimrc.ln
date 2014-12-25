@@ -46,13 +46,10 @@ let g:airline_symbols.whitespace = 'Ξ'
 " aesthetics
 syntax enable
 set background=dark
-if exists('$HAX')
-    colorscheme greenvision
-    hi Normal ctermbg=none
-    hi NonText ctermbg=none
-else
-    colorscheme bubblegum
-endif
+colorscheme bubblegum
+hi Normal ctermbg=none
+hi LineNr ctermbg=none cterm=bold
+hi NonText ctermbg=none
 set colorcolumn=80
 set number
 set expandtab
