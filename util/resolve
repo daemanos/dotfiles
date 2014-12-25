@@ -31,7 +31,7 @@ while getopts ":d" opt; do
 done
 shift $((OPTIND-1))
 
-for input in $(find ${1:-$HOME/.dot} -mindepth 1 -name '*.in' -type f); do
+for input in $(find ${1:-$HOME/dot} -mindepth 1 -name '*.in' -type f); do
     output=${input%%.in}
     echo "$input → $output"
     if $go; then

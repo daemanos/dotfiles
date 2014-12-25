@@ -26,11 +26,11 @@ link() {
                 ;;
         esac
         echo "$link → $PVD/$target"
-        #$go && ln -fs $link $PVD/$target
+        $go && ln -fs $link $PVD/$target
     done
     for subdir in $(find $1 -mindepth 1 -maxdepth 1 ! -path '*.git*' -type d); do
         link $subdir
     done
 }
 
-link ${1:-$HOME/.dot}
+link ${1:-$HOME/dot}
