@@ -1,24 +1,31 @@
 ! link:dot
-URxvt.font: xft:Inconsolata\\-dz:style=dz:size=8
+! special colors/fonts
+*font: xft:Inconsolata:size=10:antialias=false
+*boldFont: xft:Inconsolata:size=10:antialias=false
+*background: #262626
+*foreground: #d6d6d6
+
+! normal colors
+*color0:  #000000
+*color1:  #f15a4f
+*color2:  #6ac17c
+*color3:  #ffc60a
+*color4:  #0096d5
+*color5:  #956cae
+*color6:  #00b6b4
+*color7:  #d6d6d6
+
+! bright colors
+*color8:  #989f8f
+*color9:  #e98a1c
+*color10: #a3cf56
+*color11: #ffc60a
+*color12: #0096d5
+*color13: #956cae
+*color14: #00b6b4
+*color15: #ffffff
+
+! URxvt-specific
+URxvt.transparent: true
+!URxvt.shading: 50
 URxvt.scrollBar: false
-
-URxvt.background: #262626
-URxvt.foreground: #d6d6d6
-
-URxvt.color0:  #000000
-URxvt.color1:  #d75f5f
-URxvt.color2:  #5faf87
-URxvt.color3:  #ff875f
-URxvt.color4:  #87afff
-URxvt.color5:  #afafff
-URxvt.color6:  #5fafd7
-URxvt.color7:  #d6d6d6
-
-URxvt.color8:  #a8a8a8
-URxvt.color9:  #d75f5f
-URxvt.color10: #5faf87
-URxvt.color11: #ff875f
-URxvt.color12: #87afff
-URxvt.color13: #afafff
-URxvt.color14: #5fafd7
-URxvt.color15: #ffffff
