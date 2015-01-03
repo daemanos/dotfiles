@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+feh --bg-${BG_TYPE:-fill} $HOME/img/desktop

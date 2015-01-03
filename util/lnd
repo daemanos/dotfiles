@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+if [[ $1 = -d || $1 = "--dry-run" ]]; then
+    go=false
+    shift
+fi
+
+DOTHOME=${2:-$HOME}
+DOTFILES=${1:-${DOTFILES:-$HOME/dotfiles}}
+
+for link in $(find $DOTFILES -path '*.ln'); do
+    lexpr=$(head -n 1 $link | sed -r 's/.*link:(.*)|.*/\1/g')
+    if [[ "$lexpr" ]]; then
+        eval target="$DOTHOME/$lexpr"
+    else
+        base=${link%%.ln}
+        target=$DOTHOME/${base##$DOTFILES/}
+    fi
+    echo "$link → $target"
+    $go && ln -fs $link $target
+done

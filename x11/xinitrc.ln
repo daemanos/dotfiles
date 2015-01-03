@@ -1,7 +1,0 @@
-# link:dot
-xrdb ~/.Xresources &
-xmodmap ~/.Xmodmap
-xflux -z 15228 &
-xautolock -locker ~/bin/i3lock &
-~/.deskset &
-exec /usr/bin/i3

@@ -1,0 +1,9 @@
+# Aliases
+alias delete rm
+
+# Settings
+set preview_images true
+set confirm_on_delete multiple
+
+# Keybindings
+map DD shell mv -t ${TRASH:-$HOME/trash} %s

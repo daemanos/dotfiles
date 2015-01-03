@@ -1,0 +1,9 @@
+xrdb -merge ~/.Xresources &
+[ -e ~/.Xmodmap ] && xmodmap ~/.Xmodmap &
+~/bin/bindkeys
+xflux -z 15228 &
+xautolock -locker ~/bin/lock &
+xsetroot -cursor_name left_ptr
+compton -b
+~/bin/setbg
+exec /usr/bin/herbstluftwm

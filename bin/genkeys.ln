@@ -1,0 +1,25 @@
+#!/usr/bin/bash
+KEYS=${KEYS:-$HOME/.keys}
+[[ $1 = '-d' ]] && go=false
+rm $HOME/.xbindkeysrc
+
+genkeys() {
+    [ $2 ] && file=$KEYS/$1.$2 || file=$KEYS/$1
+    if [ ! -e $file ]; then
+        echo -e "\e[1;31mwarning:\e[0m no such file: $file"
+    else
+        $go && cat $file >> $HOME/.xbindkeysrc || echo "cat $file >> $HOME/.xbindkeysrc"
+    fi
+}
+
+genkeys global
+if xmodmap -pke | grep -q XF86Audio ; then
+    genkeys media native
+else
+    genkeys media emulated
+fi
+if xmodmap -pke | grep -q XF86Sleep ; then
+    genkeys lock native
+else
+    genkeys lock emulated
+fi

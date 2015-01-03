@@ -1,0 +1,105 @@
+#!/usr/bin/bash
+
+# geometry control: x-pos, y-pos, width, height
+# set to nothing for default values
+x=
+y=
+w=
+h=26
+
+# style control: font, background, foreground, underline height, and position
+# font is in xft style; use a comma to specify up to five backup fonts
+# all colors are in either hex (#rrggbb or #aarrggbb) or symbolic color names
+# (red, green, blue, etc.)
+# underline height is in pixels
+# set bot to true for a bottom-docked panel; false otherwise (do NOT unset)
+fn='Inconsolata-dz:size=9,FontAwesome:size=9'
+bg='#262626'
+fg='#ffffff'
+uln=1
+bot=false
+
+# command control: bar executable and shell
+# bar is usually located at /usr/bin/bar
+# output of bar will be piped into the specified shell; vol function expects
+# this to be an actual shell of some sort in order to execute commands for
+# buttons
+bar=/usr/bin/bar
+sh=/usr/bin/bash
+
+# ---
+
+herbstclient pad ${1:-0} $h # inform the WM of our bar
+PATH="$HOME/bin:$PATH" # use local scripts
+
+# echo a list of herbstluftwm tags, with different colors to indicate focused,
+# non-empty, empty, and urgent tags
+tags() {
+    echo -n "%{U#ffffff}  "
+    herbstclient tag_status | sed -re 's/\t([\.:\+#!])([^\t]*)/\1 \2 /g' \
+        -e 's/[\+#]/%{U#ffffff}/g' \
+        -e 's/:/%{U#d6d6d6}/g' \
+        -e 's/\./%{U#989f8f}/g' \
+        -e 's/!/%{U#e98a1c}/g'
+}
+
+# echo the current battery level, along with an icon to indicate whether the
+# battery is charging or on battery power, and a color to indicate how full the
+# battery is
+bat() {
+    lvl=$(acpi -b | grep -Eo '[[:digit:]]+%' | tr -d %)
+    if [ $lvl -gt 75 ]; then
+        echo -n "%{U#a3cf56}"
+    elif [ $lvl -gt 25 ]; then
+        echo -n "%{U#6ac17c}"
+    else
+        echo -n "%{U#f15a4f}"
+    fi
+    if acpi -b | grep -Ewq 'Charging|Full' ; then
+        echo -n "  "
+    else
+        echo -n "  "
+    fi
+    echo "$lvl% "
+}
+
+# echo the current sound level for the 'Master' control, unless muted; when
+# clicked, the associated icon will also toggle muting
+vol() {
+    if amixer get Master | grep -wq on ; then
+        echo -n "%{U#ffc60a} %{A:amixer set Master mute:}%{A} "
+        amixer get Master | tail -1 | sed -r 's/.*\[([0-9]+%)\].*/\1 /g'
+    else
+        echo "%{U#ffdb66} %{A:amixer set Master unmute:}%{A} "
+    fi
+}
+
+# echo the currently playing cmus song, or nothing if cmus is not currently
+# running; color indicates whether the song is stopped, paused, or playing
+song() {
+    if cmus-prop running ; then
+        case "$(cmus-prop status)" in
+            stopped)
+                echo -n "%{U#956cae}"
+                ;;
+            paused)
+                echo -n "%{U#0096d5}"
+                ;;
+            playing)
+                echo -n "%{U#00b6b4}"
+                ;;
+        esac
+        echo "  $(cmus-prop -t artist) - $(cmus-prop -t title) "
+    fi
+}
+
+# echo a clock
+clock() {
+    echo "$(date +'%l:%M %p')"
+}
+
+$bot && bar="$bar -d"
+while true; do
+    echo "%{l+o}$(tags)%{c-o}$(clock)%{r+o}$(song)$(vol)$(bat)%{U-}"
+    sleep 1
+done | $bar -pg ${w}x${h}+$x+$y -f $fn -B $bg -F $fg -u $uln | $sh

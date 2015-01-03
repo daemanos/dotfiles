@@ -1,5 +1,0 @@
-#!/usr/bin/bash
-
-if [[ -e "$1" && "${1%%.ln}" != "$1" ]]; then
-    local
-fi

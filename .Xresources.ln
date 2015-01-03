@@ -1,0 +1,30 @@
+! special colors/fonts
+*font: xft:Inconsolata:size=10:antialias=false
+*boldFont: xft:Inconsolata:size=10:antialias=false
+*background: #2d2d2d
+*foreground: #d6d6d6
+
+! normal colors
+*color0:  #262626
+*color1:  #f15a4f
+*color2:  #6ac17c
+*color3:  #ffc60a
+*color4:  #0096d5
+*color5:  #956cae
+*color6:  #00b6b4
+*color7:  #d6d6d6
+
+! bright colors
+*color8:  #989f8f
+*color9:  #e98a1c
+*color10: #a3cf56
+*color11: #ffdb66
+*color12: #00b4ff
+*color13: #c397de
+*color14: #00e3e0
+*color15: #ffffff
+
+! URxvt-specific
+!URxvt.transparent: true
+!URxvt.shading: 50
+URxvt.scrollBar: false

@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+# fe : change all file extensions in current directory
+
+if [ "$2" ]; then
+    for fn in ./*.$1; do
+        mv $fn ${fn/%$1/$2}
+    done
+else
+    for fn in ./*.$1; do
+        mv $fn ${fn%.$1}
+    done
+fi

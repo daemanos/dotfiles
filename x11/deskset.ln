@@ -1,9 +1,0 @@
-#!/bin/bash
-bash $HOME/.fehbg
-echo -n "building login image..."
-convert /home/$USER/img/bkg/desktop -modulate 100,40 -blur 0x5 png:/home/$USER/img/bkg/login >/dev/null 2>/dev/null
-if [[ $! -eq 0 ]]; then
-    echo -e "\e[1;32mdone\e[0m"
-else
-    echo -e "\e[1;31mfailed\e[0m"
-fi

@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+if [ -d $1 ]; then
+    rm -r $1
+    mkdir $1
+elif [ -f $1 ]; then
+    rm $1
+    touch $1
+else
+    echo -e "\e[1;31merror:\e[0m no such file or directory: $1"
+fi

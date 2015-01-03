@@ -1,3 +1,0 @@
-#!/usr/bin/bash
-ln -sf ~/Pictures/Desktop/$1 ~/Pictures/desktop
-~/.deskset
