@@ -1,3 +1,2 @@
 #!/usr/bin/bash
-clr $TRASH
-clr $(xdg-user-dir DOWNLOAD)
+clr $TRASH $(xdg-user-dir DOWNLOAD)
