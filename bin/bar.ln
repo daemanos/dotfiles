@@ -66,30 +66,34 @@ bat() {
 # echo the current sound level for the 'Master' control, unless muted; when
 # clicked, the associated icon will also toggle muting
 vol() {
+    echo -n "%{U#ffc60a}"
     if amixer get Master | grep -wq on ; then
-        echo -n "%{U#ffc60a} %{A:amixer set Master mute:}%{A} "
+        echo -n " %{A:amixer set Master mute:}%{A} "
         amixer get Master | tail -1 | sed -r 's/.*\[([0-9]+%)\].*/\1 /g'
     else
-        echo "%{U#ffdb66} %{A:amixer set Master unmute:}%{A} "
+        echo " %{A:amixer set Master unmute:}%{A} "
     fi
 }
 
 # echo the currently playing cmus song, or nothing if cmus is not currently
 # running; color indicates whether the song is stopped, paused, or playing
 song() {
-    if cmus-prop running ; then
+    if cmus-prop ; then
         case "$(cmus-prop status)" in
             stopped)
+                cmus-remote -C 'colorscheme magenta'
                 echo -n "%{U#956cae}"
                 ;;
             paused)
+                cmus-remote -C 'colorscheme blue'
                 echo -n "%{U#0096d5}"
                 ;;
             playing)
+                cmus-remote -C 'colorscheme cyan'
                 echo -n "%{U#00b6b4}"
                 ;;
         esac
-        echo "  $(cmus-prop -t artist) - $(cmus-prop -t title) "
+        echo "  $(cmus-prop tag artist) - $(cmus-prop tag title) "
     fi
 }
 
