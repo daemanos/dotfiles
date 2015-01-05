@@ -1,6 +1,6 @@
 xrdb -merge ~/.Xresources &
 [ -e ~/.Xmodmap ] && xmodmap ~/.Xmodmap &
-~/bin/bindkeys
+xbindkeys
 xflux -z 15228 &
 xautolock -locker ~/bin/lock &
 xsetroot -cursor_name left_ptr
