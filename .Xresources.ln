@@ -1,6 +1,6 @@
 ! special colors/fonts
-*font: xft:Inconsolata:size=10:antialias=false
-*boldFont: xft:Inconsolata:size=10:antialias=false
+*font: xft:Inconsolata-g:size=10
+*boldFont: xft:Inconsolata-g:size=10
 *background: #2d2d2d
 *foreground: #d6d6d6
 
