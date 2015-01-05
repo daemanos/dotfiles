@@ -1,19 +1,7 @@
 #!/usr/bin/bash
-if [[ $1 = '-t' || $1 = '--tag' ]]; then
-    prefix='tag '
-    shift
-elif [[ $1 = '-s' || $1 = '--setting' ]]; then
-    prefix='set '
-    shift
-elif [[ $1 = 'running' ]]; then
-    if ! cmus-remote -Q >/dev/null 2>/dev/null ; then
-        exit 1
-    fi
-fi
-infos=$(mktemp)
-if cmus-remote -Q >$infos 2>/dev/null ; then
-    grep -E "^$prefix$1 " $infos | sed -r "s/$prefix$1 (.*)/\1/g"
+q=$(cmus-remote -Q 2>/dev/null)
+if [ $? -eq 0 ]; then
+    echo "$q" | grep -E "^$* " | sed -r "s/^$* (.*)/\1/g"
 else
     exit 1
 fi
-rm $infos
