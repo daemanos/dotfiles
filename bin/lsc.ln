@@ -1,27 +1,6 @@
 #!/usr/bin/bash
 TEST="█████████"
-COLORS=(30 31 32 33 34 35 36 37)
-
-gethex() {
-    hex=$(grep color$((${1#3}+${2:-0})): ~/.Xresources |
-        sed -r 's/.*(#[0-9a-fA-F]{6})/\1/g')
-}
-
-for normal in ${COLORS[@]}; do
-    gethex $normal
-    echo -ne "\e[${normal}m $hex  "
-done
-echo -e "\e[0m"
-for normal in ${COLORS[@]}; do
-    echo -ne "\e[${normal}m$TEST "
-done
-echo -e "\e[0m"
-for bright in ${COLORS[@]}; do
-    echo -ne "\e[1;${bright}m$TEST "
-done
-echo -e "\e[0m"
-for bright in ${COLORS[@]}; do
-    gethex $bright 8
-    echo -ne "\e[1;${bright}m $hex  "
-done
-echo -e "\e[0m"
+echo -e " $(perl -ne '/color([0-7]):.*(#[0-9a-fA-F]{6})/ && print "\\e[3$1m $2  "' <~/.Xresources)"
+echo -e " \e[30m$TEST \e[31m$TEST \e[32m$TEST \e[33m$TEST \e[34m$TEST \e[35m$TEST \e[36m$TEST \e[37m$TEST"
+echo -e " \e[1;30m$TEST \e[1;31m$TEST \e[1;32m$TEST \e[1;33m$TEST \e[1;34m$TEST \e[1;35m$TEST \e[1;36m$TEST \e[1;37m$TEST"
+echo -e " $(perl -ne '/color([89]|1[0-5]):.*(#[0-9a-fA-F]{6})/ && printf("\\e[1;3%dm %s  ", $1-8, $2)' <~/.Xresources)"
