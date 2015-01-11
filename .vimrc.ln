@@ -6,9 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'jnurmine/Zenburn'
-Plugin 'baskerville/bubblegum'
-Plugin 'vim-scripts/greenvision'
+Plugin 'chriskempson/base16-vim'
 Plugin 'wting/rust.vim'
 Plugin 'derekwyatt/vim-scala'
 
@@ -20,7 +18,6 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'Raimondi/delimitMate'
 Plugin 'majutsushi/tagbar'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
-Plugin 'edkolev/tmuxline.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -32,7 +29,8 @@ set undodir=~/.vim/undo//
 " aesthetics
 syntax enable
 set background=dark
-colorscheme bubblegum
+let base16colorspace=256
+colorscheme base16-flat
 hi Normal ctermbg=none
 hi LineNr ctermbg=none cterm=bold
 hi NonText ctermbg=none

@@ -1,11 +1,14 @@
-! special colors/fonts
-*font: xft:Inconsolata-g:size=10
-*boldFont: xft:Inconsolata-g:size=10
+!! Fonts !!
+*font: xft:Inconsolata-g:size=10,xft:FontAwesome
+*boldFont: xft:Inconsolata-g:size=10,xft:FontAwesome
+
+!! Colors !!
+! special
 *background: #2d2d2d
 *foreground: #d6d6d6
 
-! normal colors
-*color0:  #262626
+! normal
+*color0:  #2d2d2d
 *color1:  #f15a4f
 *color2:  #6ac17c
 *color3:  #ffc60a
@@ -14,7 +17,7 @@
 *color6:  #00b6b4
 *color7:  #d6d6d6
 
-! bright colors
+! bright
 *color8:  #989f8f
 *color9:  #e98a1c
 *color10: #a3cf56
@@ -24,7 +27,7 @@
 *color14: #00e3e0
 *color15: #ffffff
 
-! URxvt-specific
-!URxvt.transparent: true
-!URxvt.shading: 50
+!! URxvt !!
 URxvt.scrollBar: false
+URxvt.url-select.launcher:  /usr/bin/luakit
+URxvt.url-select.underline: true
