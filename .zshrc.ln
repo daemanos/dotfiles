@@ -1,6 +1,6 @@
 # special directories
-export ECLIPSE_HOME="/usr/share/eclipse"
 export DOTFILES="$HOME/dotfiles"
+export ECLIPSE_HOME="/usr/share/eclipse"
 export TRASH="$HOME/trash"
 export BIN="$HOME/bin"
 export KEYS="$HOME/.keys"
@@ -50,8 +50,6 @@ alias grep='grep --color'
 alias cls=' echo -ne "\033c"' # clear the screen
 alias hb='HandBrakeCLI' # love you handbrake, but wtf is with that name
 alias git=hub
-alias scrot='scrot -cd 3 -e "mv $f ~/img/shots/"'
-alias svim='vim --servername vim0'
 
 # shortcuts for common superuser functionality
 if [ $UID -ne 0 ]; then
@@ -61,8 +59,9 @@ if [ $UID -ne 0 ]; then
 fi
 
 # aesthetics
+source ~/.config/base16-shell/base16-flat.dark.sh
 autoload colors && colors
-PROMPT="%{$fg[white]%(! $fg[red] )—$fg[white]%(1j $fg[green] )—$fg[white]%(?  $fg[red])—$reset_color%} "
+PROMPT="%{$fg_bold[white]%(1j $fg[green] )>$fg[white]%(?  $fg[red])>$reset_color%} "
 RPROMPT=""
 if [ -n "$TMUX" ]; then
     export TERM=screen-256color
