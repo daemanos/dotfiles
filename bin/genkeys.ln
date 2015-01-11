@@ -12,6 +12,7 @@ genkeys() {
     fi
 }
 
+# generate
 genkeys global
 if xmodmap -pke | grep -q XF86Audio ; then
     genkeys media native
@@ -23,3 +24,6 @@ if xmodmap -pke | grep -q XF86Sleep ; then
 else
     genkeys lock emulated
 fi
+
+# reload
+killall -HUP xbindkeys
