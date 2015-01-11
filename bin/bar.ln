@@ -13,11 +13,25 @@ h=26
 # (red, green, blue, etc.)
 # underline height is in pixels
 # set bot to true for a bottom-docked panel; false otherwise (do NOT unset)
-fn='Inconsolata-dz:size=9,FontAwesome:size=9'
-bg='#262626'
-fg='#ffffff'
+fn='Inconsolata-g:size=9,FontAwesome:size=9'
+bg='#34495e'
+fg='#ecf0f1'
 uln=1
 bot=false
+
+# colors
+black='#2c3e50'
+gray='#95a5a6'
+red='#e74c3c'
+orange='e67e22'
+green='#2ecc71'
+brown='#be643c'
+yellow='#f1c40f'
+blue='#3498db'
+magenta='#9b59b6'
+cyan='#1abc9c'
+white='#e0e0e0'
+bwhite='#ecf0f1'
 
 # command control: bar executable and shell
 # bar is usually located at /usr/bin/bar
@@ -27,6 +41,9 @@ bot=false
 bar=/usr/bin/bar
 sh=/usr/bin/bash
 
+# module-specific options
+bat=/sys/class/power_supply/BAT1
+
 # ---
 
 herbstclient pad ${1:-0} $h # inform the WM of our bar
@@ -35,43 +52,41 @@ PATH="$HOME/bin:$PATH" # use local scripts
 # echo a list of herbstluftwm tags, with different colors to indicate focused,
 # non-empty, empty, and urgent tags
 tags() {
-    echo -n "%{U#ffffff}  "
+    echo -n "%{U$bwhite}  "
     herbstclient tag_status | sed -re 's/\t([\.:\+#!])([^\t]*)/\1 \2 /g' \
-        -e 's/[\+#]/%{U#ffffff}/g' \
-        -e 's/:/%{U#d6d6d6}/g' \
-        -e 's/\./%{U#989f8f}/g' \
-        -e 's/!/%{U#e98a1c}/g'
+        -e "s/[\+#]/%{U$bwhite}/g" \
+        -e "s/:/%{U$white}/g" \
+        -e "s/\./%{U$gray}/g" \
+        -e "s/!/%{U$orange}/g"
 }
 
 # echo the current battery level, along with an icon to indicate whether the
 # battery is charging or on battery power, and a color to indicate how full the
 # battery is
 bat() {
-    lvl=$(acpi -b | grep -Eo '[[:digit:]]+%' | tr -d %)
-    if [ $lvl -gt 75 ]; then
-        echo -n "%{U#a3cf56}"
-    elif [ $lvl -gt 25 ]; then
-        echo -n "%{U#6ac17c}"
-    else
-        echo -n "%{U#f15a4f}"
+    lvl=$(cat $bat/capacity 2>/dev/null)
+    if [ $? -eq 0 ]; then
+        if [ $lvl -gt 60 ]; then
+            color="%{U$green}"
+        elif [ $lvl -gt 20 ]; then
+            color="%{U#$orange}"
+        else
+            color="%{U$red}"
+        fi
+        grep -Eq 'Charging|Full' $bat/status && ico="" || ico=""
+        echo "$color $ico $lvl% "
     fi
-    if acpi -b | grep -Ewq 'Charging|Full' ; then
-        echo -n "  "
-    else
-        echo -n "  "
-    fi
-    echo "$lvl% "
 }
 
 # echo the current sound level for the 'Master' control, unless muted; when
 # clicked, the associated icon will also toggle muting
 vol() {
-    echo -n "%{U#ffc60a}"
-    if amixer get Master | grep -wq on ; then
-        echo -n " %{A:amixer set Master mute:}%{A} "
-        amixer get Master | tail -1 | sed -r 's/.*\[([0-9]+%)\].*/\1 /g'
+    volinfo=$(amixer get Master | tail -1)
+    if [ $(echo $volinfo | awk '{ print $6 }' | tr -d '[]') = "on" ]; then
+        echo -n "%{U$yellow} %{A:amixer set Master mute:}%{A} "
+        echo $volinfo | awk '{ print $4 }' | tr -d '[]'
     else
-        echo " %{A:amixer set Master unmute:}%{A} "
+        echo "%{U$brown} %{A:amixer set Master unmute:}%{A} "
     fi
 }
 
@@ -82,15 +97,15 @@ song() {
         case "$(cmus-prop status)" in
             stopped)
                 cmus-remote -C 'colorscheme magenta'
-                echo -n "%{U#956cae}"
+                echo -n "%{U$magenta}"
                 ;;
             paused)
                 cmus-remote -C 'colorscheme blue'
-                echo -n "%{U#0096d5}"
+                echo -n "%{U$blue}"
                 ;;
             playing)
                 cmus-remote -C 'colorscheme cyan'
-                echo -n "%{U#00b6b4}"
+                echo -n "%{U$cyan}"
                 ;;
         esac
         echo "  $(cmus-prop tag artist) - $(cmus-prop tag title) "
@@ -99,11 +114,11 @@ song() {
 
 # echo a clock
 clock() {
-    echo "$(date +'%l:%M %p')"
+    date +'%R'
 }
 
 $bot && bar="$bar -d"
 while true; do
     echo "%{l+o}$(tags)%{c-o}$(clock)%{r+o}$(song)$(vol)$(bat)%{U-}"
-    sleep 1
+    sleep 0.2
 done | $bar -pg ${w}x${h}+$x+$y -f $fn -B $bg -F $fg -u $uln | $sh
