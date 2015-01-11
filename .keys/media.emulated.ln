@@ -1,0 +1,19 @@
+# Emulated media control (using mod4 + <key>)
+
+# Music Control
+"cmus-remote -u"
+    Mod4 + m
+"cmus-remote -r"
+    Mod4 + b
+"cmus-remote -n"
+    Mod4 + n
+"cmus-remote -s"
+    Shift+Mod4 + m
+
+# Audio Control
+"amixer set Master 1%+"
+    Shift+Mod4 + period
+"amixer set Master 1%-"
+    Shift+Mod4 + comma
+"amixer set Master toggle"
+    Shift+Mod4 + slash

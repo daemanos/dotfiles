@@ -1,0 +1,11 @@
+# Global keybindings (platform-agnostic)
+"urxvt"
+    Mod4 + Return
+"chromium"
+    Mod4 + i
+"urxvt -e ranger"
+    Mod4 + f
+"urxvt -e ~/bin/cmus"
+    Mod4 + m
+"~/bin/launcher"
+    Mod4 + d
