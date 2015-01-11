@@ -88,7 +88,7 @@ hc attr theme.border_width 0
 hc attr theme.floating.border_width 0
 hc attr theme.floating.outer_width 0
 
-hc set window_gap 13
+hc set window_gap 0
 hc set frame_padding 0
 hc set smart_window_surroundings 0
 hc set smart_frame_surroundings 1
