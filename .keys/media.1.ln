@@ -2,13 +2,13 @@
 
 # Music Control
 "cmus-remote -u"
-    Mod4 + m
+    Shift+Mod4 + n
 "cmus-remote -r"
     Mod4 + b
 "cmus-remote -n"
     Mod4 + n
 "cmus-remote -s"
-    Shift+Mod4 + m
+    Shift+Mod4 + b
 
 # Audio Control
 "amixer set Master 1%+"

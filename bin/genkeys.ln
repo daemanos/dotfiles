@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 KEYS=${KEYS:-$HOME/.keys}
 [[ $1 = '-d' ]] && go=false
-rm $HOME/.xbindkeysrc
+[ -e $HOME/.xbindkeysrc ] && rm $HOME/.xbindkeysrc
 
 genkeys() {
     [ $2 ] && file=$KEYS/$1.$2 || file=$KEYS/$1
@@ -13,17 +13,14 @@ genkeys() {
 }
 
 # generate
-genkeys global
-if xmodmap -pke | grep -q XF86Audio ; then
-    genkeys media native
-else
-    genkeys media emulated
-fi
-if xmodmap -pke | grep -q XF86Sleep ; then
-    genkeys lock native
-else
-    genkeys lock emulated
-fi
+for keys in $KEYS/*.keys; do
+    genkeys $(basename $keys)
+done
+for conds in $KEYS/*.conds; do
+    keys=$(basename $conds .conds)
+    bash $conds
+    genkeys $keys $?
+done
 
 # reload
 killall -HUP xbindkeys
