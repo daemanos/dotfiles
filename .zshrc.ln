@@ -15,15 +15,18 @@ export VISUAL="vim"
 export PAGER="less"
 export GIT_EDITOR="$EDITOR"
 export GEM_EDITOR="$EDITOR"
-export BROWSER="firefox"
+export BROWSER="chromium"
 
 # file/directory operations
 alias mkdir='mkdir -pv'
+alias ds='du -hs'
 alias ls='ls -hHF --color --group-directories-first'
 alias la='ls -A'
 alias ll='ls -l'
-alias lal='ls -Al'
+alias le='ls -Al'
 alias lf='ls -1 | wc -1'
+lh() { du -h $1/* | sort -hr; }
+trash() { mv $1 $TRASH; }
 
 # for safety
 alias cp='cp -i'
@@ -50,6 +53,7 @@ alias grep='grep --color'
 alias cls=' echo -ne "\033c"' # clear the screen
 alias hb='HandBrakeCLI' # love you handbrake, but wtf is with that name
 alias git=hub
+alias svim='vim --servername=vim0'
 
 # shortcuts for common superuser functionality
 if [ $UID -ne 0 ]; then
@@ -71,4 +75,4 @@ fi
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
 
 # secret stuff
-source ~/.localrc
+[ -e ~/.localrc ] && source ~/.localrc || true
