@@ -1,9 +1,8 @@
 #!/bin/bash
-
-raw=$(mktemp --tmpdir i3lock-img-XXXXXXXX.png)
-blr=$(mktemp --tmpdir i3lock-img-XXXXXXXX.png)
+raw='/tmp/raw-lock-scrot.png'
+blr='/tmp/tint-lock-scrot.png'
 
 scrot -d0 "$raw"
-convert "$raw" -modulate 100,60 -blur 0x3 "$blr"
+convert "$raw" -modulate 100,75 -blur 0x4 "$blr"
 
 /usr/bin/i3lock -i "$blr"
