@@ -1,8 +1,10 @@
+PATH="$HOME/bin:$PATH"
+
+bindkeys &
 xrdb -merge ~/.Xresources &
-[ -e ~/.Xmodmap ] && xmodmap ~/.Xmodmap &
-xbindkeys
 xflux -z 15228 &
-xautolock -locker ~/bin/lock &
-xsetroot -cursor_name left_ptr
-~/bin/setbg
-exec /usr/bin/herbstluftwm
+xautolock -locker $HOME/bin/lock &
+chbg -r &
+compton -b &
+mpd &
+exec herbstluftwm

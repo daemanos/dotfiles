@@ -1,6 +1,6 @@
 !! Fonts !!
-*font: xft:Inconsolata-g:size=10,xft:FontAwesome
-*boldFont: xft:Inconsolata-g:size=10,xft:FontAwesome
+*font: xft:Inconsolata-g:style=g:size=10,xft:FontAwesome:style=regular
+!*boldFont: xft:Inconsolata-g:style=g:size=10,xft:FontAwesome:style=regular
 
 !! Colors !!
 ! special
@@ -28,6 +28,7 @@
 *color15: #ecf0f1
 
 !! URxvt !!
+URxvt.title: Terminal
 URxvt.scrollBar: false
 URxvt.url-select.launcher:  /usr/bin/luakit
 URxvt.url-select.underline: true

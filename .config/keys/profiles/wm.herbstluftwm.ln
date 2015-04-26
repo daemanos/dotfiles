@@ -1,0 +1,35 @@
+# Core functionality
+super + shift + {q,r,c}
+    herbstclient {quit,reload,close}
+
+# Getting around
+super + {h,j,k,l}
+    herbstclient focus {left,down,up,right}
+super + shift + {h,j,k,l}
+    herbstclient shift {left,down,up,right}
+super + {period,comma}
+    herbstclient use_index {+1,-1} --skip-visible
+super + backspace
+    herbstclient cycle_monitor
+super + {_,shift +} tab
+    herbstclient cycle_all {+1,-1}
+super + c
+    herbstclient cycle
+super + x
+    herbstclient jumpto urgent
+
+# Frame manipulation
+super + control + {u,o}
+    herbstclient split {bottom,right} 0.5
+super + control + space
+    herbstclient split explode
+super + control + {h,j,k,l}
+    herbstclient resize {left,down,up,right} +0.05
+super + r
+    herbstclient remove
+
+# Layouts
+super + space
+    herbstclient cycle_layout 1
+super + shift + {s,f,o}
+    herbstclient {floating,fullscreen,pseudotile} toggle

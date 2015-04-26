@@ -1,0 +1,10 @@
+super + Return
+    urxvt
+super + o ; w
+    chromium
+super + f
+    urxvt -e ranger
+super + m
+    urxvt -T 'Media Player' -e ncmpcpp
+super + d
+    ~/bin/launcher

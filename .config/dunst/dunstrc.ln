@@ -13,7 +13,7 @@
     # height in # of notification bubbles; all others in pixels
     # coordinates prefixed with + are from the left and top edge of the screen
     #                           - are from the right and bottom edge
-    geometry = "x26"
+    geometry = "400x26"
     padding = 5
     horizontal_padding = 5
     dmenu = /usr/bin/dmenu -p dunst:
@@ -24,16 +24,16 @@
     width = 0
 
 [urgency_low]
-    background = "#262626"
-    foreground = "#dcdcdc"
+    background = "#34495e"
+    foreground = "#e0e0e0"
     timeout = 6
 
 [urgency_normal]
-    background = "#262626"
-    foreground = "#ffffff"
+    background = "#34495e"
+    foreground = "#e0e0e0"
     timeout = 6
 
 [urgency_critical]
-    background = "#d64937"
+    background = "#e67e22"
     foreground = "#ffffff"
     timeout = 0

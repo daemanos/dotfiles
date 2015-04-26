@@ -1,6 +1,0 @@
-#!/usr/bin/bash
-if [ -L $HOME/img/desktop ]; then
-    hsetroot -${BG_TYPE:-fill} $HOME/img/desktop
-else
-    hsetroot -solid $(cat $HOME/img/desktop)
-fi

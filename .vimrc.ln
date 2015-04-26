@@ -9,6 +9,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'wting/rust.vim'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'cespare/vim-toml'
+Plugin 'plasticboy/vim-markdown'
 
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'

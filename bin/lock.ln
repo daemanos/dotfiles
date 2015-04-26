@@ -1,8 +1,0 @@
-#!/bin/bash
-raw='/tmp/raw-lock-scrot.png'
-blr='/tmp/tint-lock-scrot.png'
-
-scrot -d0 "$raw"
-convert "$raw" -modulate 100,75 -blur 0x4 "$blr"
-
-/usr/bin/i3lock -i "$blr"

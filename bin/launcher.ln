@@ -1,4 +1,0 @@
-#!/usr/bin/bash
-dmenu_run -h 26 -dim 0.75 -dc '#34495e' -fn 'Inconsolata-dz:size=10' \
-    -nb '#34495e' -nf '#e0e0e0' \
-    -sb '#2c3e50' -sf '#ecf0f1'

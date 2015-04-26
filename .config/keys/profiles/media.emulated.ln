@@ -1,0 +1,20 @@
+super + p
+    mpc toggle
+super + b
+    mpc prev
+super + n
+    mpc next
+super + shift + p
+    mpc stop
+super + ctrl + m ; {r,z,y,R}
+    mpc {repeat,random,single,consume}
+
+super + shift + period
+    amixer set Master 1%+
+super + shift + comma
+    amixer set Master 1%-
+super + shift + slash
+    amixer set Master toggle
+
+super + shift + z
+    ~/bin/lock

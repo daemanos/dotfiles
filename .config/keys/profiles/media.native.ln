@@ -1,0 +1,18 @@
+XF86AudioPlay
+    mpc toggle
+XF86AudioPrev
+    mpc prev
+XF86AudioNext
+    mpc next
+XF86AudioStop
+    mpc stop
+
+XF86AudioRaiseVolume
+    amixer set Master 1%+
+XF86AudioLowerVolume
+    amixer set Master 1%-
+XF86AudioMute
+    amixer set Master toggle
+
+XF86Sleep
+    ~/bin/lock

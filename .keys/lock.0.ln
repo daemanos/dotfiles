@@ -1,3 +1,0 @@
-# Native lock binding (using XF86Lock)
-"~/bin/lock"
-    XF86Sleep

@@ -1,0 +1,63 @@
+# connection settings
+mpd_music_dir = "~/music"
+
+# music visualizer
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_type = "wave"
+visualizer_look = "◆▮"
+
+# delays
+playlist_disable_highlight_delay = "0"
+message_delay_time = "5"
+
+# formatting
+song_columns_list_format = "(7f)[blue]{l} (50)[blue]{t|f:Title} (20)[blue]{a} (20)[blue]{b}"
+song_list_format = "{%a - }{%t}|{%f}$R{(%l)}"
+song_status_format = {{%a{ "%b"} - }{%t}}|{%f}
+song_library_format = "{%n - }{%t}|{%f}"
+tag_editor_album_format = "%b"
+browser_sort_format = "{%a - }{%t}|{%f} {(%l)}"
+enable_window_title = "no"
+
+browser_playlist_prefix = "$2playlist$9 "
+now_playing_prefix = "$b"
+now_playing_suffix = "$/b"
+selected_item_prefix = "$b"
+selected_item_suffix = "$/b"
+modified_item_prefix = "$3> $9"
+
+titles_visibility = "no"
+header_visibility = "no"
+statusbar_visibility = "no"
+
+# miscellanea
+progressbar_look = "── "
+user_interface = "classic"
+mouse_support = "no"
+screen_switcher_mode = "previous"
+ignore_leading_the = "yes"
+external_editor = "vim"
+use_console_editor = "yes"
+browser_sort_mode = "name"
+
+# colors
+colors_enabled = "yes"
+discard_colors_if_item_is_selected = "yes"
+
+color1 = "black"
+color2 = "blue"
+
+empty_tag_color = "blue"
+header_window_color = "black"
+volume_color = "black"
+state_line_color = "black"
+state_flags_color = "blue"
+main_window_color = "blue"
+main_window_highlight_color = "blue"
+progressbar_color = "white"
+progressbar_elapsed_color = "cyan"
+statusbar_color = "white"
+active_column_color = "cyan"
+visualizer_color = "blue"
+active_window_border = "black"

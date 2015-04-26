@@ -3,7 +3,13 @@ export DOTFILES="$HOME/dotfiles"
 export ECLIPSE_HOME="/usr/share/eclipse"
 export TRASH="$HOME/trash"
 export BIN="$HOME/bin"
-export KEYS="$HOME/.keys"
+
+# XDG base directories
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_DIRS="/usr/local/share:/usr/share"
+export XDG_CONFIG_DIRS="/etc/xdg"
+export XDG_CACHE_HOME="$HOME/.cache"
 
 # paths
 export MANPATH="/usr/local/man:/usr/local/git/man:$MANPATH"
@@ -26,7 +32,6 @@ alias ll='ls -l'
 alias le='ls -Al'
 alias lf='ls -1 | wc -1'
 lh() { du -h $1/* | sort -hr; }
-trash() { mv $1 $TRASH; }
 
 # for safety
 alias cp='cp -i'
@@ -36,34 +41,38 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
-# pacman
-alias pacman='pacaur --noedit'
-alias pacs='pacman -Si'
-alias pacl='pacman -Ql'
-alias paci='pacman -Qi'
-alias pacu='pacman -Syu'
-alias paco='pacman -Qqdt'
-alias pacc='pacman -R $(paco)'
-alias paca='pacman -D --asexplicit'
+# aura
+alias aura='sudo aura'
+alias auraa='sudo aura -A'
+alias aurs='sudo aura -S'
+alias aurl='sudo aura -U'
+alias aurr='sudo aura -R'
+alias aurd='sudo aura -Rs'
+alias aurls='aura -Ql'
+alias auri='aura -Qi'
+alias aurup='sudo aura -Syu'
+alias aurul='sudo aura -Syu linux linux-headers'
+alias aurua='sudo aura -Ayu'
+alias auro='aura -O'
+alias aurc='sudo aura -Oj'
+
+# catize
+alias catln='catize link'
+alias catls='catize list'
+alias catman='catize info'
+alias ciff='catize diff'
 
 # misc system commands
 alias ping='ping -c 5'
 alias dmesg='dmesg -HL'
 alias grep='grep --color'
 alias cls=' echo -ne "\033c"' # clear the screen
-alias hb='HandBrakeCLI' # love you handbrake, but wtf is with that name
 alias git=hub
-alias svim='vim --servername=vim0'
-
-# shortcuts for common superuser functionality
-if [ $UID -ne 0 ]; then
-    alias reboot='sudo systemctl reboot'
-    alias poweroff='sudo systemctl poweroff'
-    alias netctl='sudo netctl'
-fi
+alias svim='vim --servername vim0'
+hdu() { find $HOME -mindepth 1 -maxdepth 1 -type d | while read dir; do; basename $dir; done | xargs du -hs 2>/dev/null | sort -rh; }
 
 # aesthetics
-source ~/.config/base16-shell/base16-flat.dark.sh
+source $XDG_CONFIG_HOME/base16-shell/base16-flat.dark.sh
 autoload colors && colors
 PROMPT="%{$fg_bold[white]%(1j $fg[green] )>$fg[white]%(?  $fg[red])>$reset_color%} "
 RPROMPT=""
