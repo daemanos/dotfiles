@@ -4,28 +4,36 @@
 
 !! Colors !!
 ! special
-*background: #2c3e50
+*background: #455a64
 *foreground: #e0e0e0
 
 ! normal
-*color0:  #2c3e50
-*color1:  #e74c3c
-*color2:  #2ecc71
-*color3:  #f1c40f
-*color4:  #3498db
-*color5:  #9b59b6
-*color6:  #1abc9c
+*color0:  #455a64
+*color1:  #ff5252
+*color2:  #69f0ae
+*color3:  #ffd740
+*color4:  #448aff
+*color5:  #e040fb
+*color6:  #40c4ff
 *color7:  #e0e0e0
 
 ! bright
-*color8:  #95a5a6
-*color9:  #e74c3c
-*color10: #2ecc71
-*color11: #f1c40f
-*color12: #3498db
-*color13: #9b59b6
-*color14: #1abc9c
-*color15: #ecf0f1
+*color8:  #78909c
+*color9:  #ff5252
+*color10: #69f0ae
+*color11: #ffd740
+*color12: #448aff
+*color13: #e040fb
+*color14: #40c4ff
+*color15: #eceff1
+
+! 256-color space
+*color16: #ffab40
+*color17: #8d6e63
+*color18: #546e7a
+*color19: #607d8b
+*color20: #90a4ae
+*color21: #cfd8dc
 
 !! URxvt !!
 URxvt.title: Terminal
