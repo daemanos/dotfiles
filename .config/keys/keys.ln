@@ -1,10 +1,14 @@
 super + Return
     urxvt
-super + o ; w
-    chromium
+super + w
+    firefox
+super + W
+    firefox --private-window
 super + f
     urxvt -e ranger
 super + m
     urxvt -T 'Media Player' -e ncmpcpp
 super + d
     ~/bin/launcher
+ctrl + shift + k ; {g,e,a,h,c,j,r}
+    setxkbmap {gr,us,ara,il,cn,jp,ru}
