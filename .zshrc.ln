@@ -41,20 +41,21 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
-# aura
-alias aura='sudo aura'
-alias auraa='sudo aura -A'
-alias aurs='sudo aura -S'
-alias aurl='sudo aura -U'
-alias aurr='sudo aura -R'
-alias aurd='sudo aura -Rs'
-alias aurls='aura -Ql'
-alias auri='aura -Qi'
-alias aurup='sudo aura -Syu'
-alias aurul='sudo aura -Syu linux linux-headers'
-alias aurua='sudo aura -Ayu'
-alias auro='aura -O'
-alias aurc='sudo aura -Oj'
+# pacman/aura
+alias pacman='sudo pacman'
+alias pacs='sudo pacman -S'
+alias pacup='sudo pacman -Syu'
+alias pacul='sudo pacman -Syu linux linux-headers'
+alias pacr='sudo pacman -R'
+alias pacd='sudo pacman -Rs'
+alias pacq='pacman -Q'
+pacls() { pacman -Ql $1 | sed -r "s/^$1 (.*)$/\1/g" ; }
+alias paci='pacman -Qi'
+alias paco='aura -O'
+alias pacro='sudo aura -Oj'
+
+alias aurs='sudo aura -Ax'
+alias aurup='sudo aura -Axyu'
 
 # catize
 alias catln='catize link'
@@ -67,12 +68,11 @@ alias ping='ping -c 5'
 alias dmesg='dmesg -HL'
 alias grep='grep --color'
 alias cls=' echo -ne "\033c"' # clear the screen
-alias git=hub
 alias svim='vim --servername vim0'
 hdu() { find $HOME -mindepth 1 -maxdepth 1 -type d | while read dir; do; basename $dir; done | xargs du -hs 2>/dev/null | sort -rh; }
 
 # aesthetics
-source $XDG_CONFIG_HOME/base16-shell/base16-flat.dark.sh
+source $HOME/bin/base16-md
 autoload colors && colors
 PROMPT="%{$fg_bold[white]%(1j $fg[green] )>$fg[white]%(?  $fg[red])>$reset_color%} "
 RPROMPT=""
