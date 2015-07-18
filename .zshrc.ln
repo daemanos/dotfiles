@@ -11,6 +11,10 @@ export XDG_DATA_DIRS="/usr/local/share:/usr/share"
 export XDG_CONFIG_DIRS="/etc/xdg"
 export XDG_CACHE_HOME="$HOME/.cache"
 
+# panel files
+export PANEL_HOME=$XDG_CONFIG_HOME/panel
+export PANEL_CONFIG=$PANEL_HOME/config
+
 # paths
 export MANPATH="/usr/local/man:/usr/local/git/man:$MANPATH"
 export PATH="$DOTFILES/util:$BIN:$PATH"

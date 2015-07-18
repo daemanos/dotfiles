@@ -59,7 +59,6 @@ hc unlock
 hc set tree_style '╾│ ├└╼─┐'
 
 # find the panel
-panel=~/.config/panel/panel.sh
 for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
-    "$panel" $monitor &
+    $XDG_CONFIG_HOME/panel/panel $monitor &
 done
