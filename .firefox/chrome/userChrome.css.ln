@@ -1,0 +1,62 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#navigator-toolbox {
+    margin-bottom: -1px !important;
+}
+
+#toolbar-menubar {
+    display: none !important;
+}
+
+#nav-bar {
+    display: none !important;
+}
+
+#PersonalToolbar {
+    display: none !important;
+}
+
+#addon-bar {
+    display: none !important;
+}
+
+.tabs-newtab-button {
+    display: none !important;
+}
+
+.tabbrowser-tab[selected="true"] {
+    font-weight: bold;
+}
+
+.tabbrowser-tab {
+    background: transparent !important;
+    background-image: none !important;
+    color: white !important;
+    border-style: none !important;
+    border-radius: 0px !important;
+    border-image: none !important;
+}
+
+.tab-throbber {
+    display: none !important;
+}
+
+.tab-icon-image {
+    display: none !important;
+}
+
+.tab-icon-overlay {
+    display: none !important;
+}
+
+.tab-close-button {
+    display: none !important;
+}
+
+#new-tab-button {
+    display: none !important;
+}
+
+#alltabs-button {
+    display: none !important;
+}
