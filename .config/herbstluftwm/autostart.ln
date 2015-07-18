@@ -59,4 +59,4 @@ hc unlock
 hc set tree_style '╾│ ├└╼─┐'
 
 # find the panel
-$XDG_CONFIG_HOME/panel/panel &
+${XDG_CONFIG_HOME:-$HOME/.config}/panel/panel &
