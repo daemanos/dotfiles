@@ -37,6 +37,10 @@
     border-image: none !important;
 }
 
+.tabbrowser-tab .tab-background {
+    display: none !important;
+}
+
 .tab-throbber {
     display: none !important;
 }
