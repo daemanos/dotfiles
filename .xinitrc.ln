@@ -6,7 +6,8 @@ xflux -z 15228 &
 xautolock -locker $HOME/bin/lock &
 chbg -r &
 compton -b
-unclutter --timeout 3 --exclude-root --fork
+unclutter --timeout 3 --fork
 mpd &
 dropbox-cli start &
-exec herbstluftwm
+$HOME/.config/panel/panel &
+exec bspwm
