@@ -1,66 +1,168 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+/* Disable Firefox default background */
+#TabsToolbar::after {
+    display: none;
+}
+
+/* Tabs Toolbar Styling */
+
+#TabsToolbar {
+    background: transparent !important;
+    margin-right: -25px !important;
+    margin-left: -18px !important;
+}
+
+.tabbrowser-tabs {
+    min-height: 26px !important;
+    background: #455a64 !important;
+    border-bottom: 4px solid #607d8b !important;
+}
+
 #navigator-toolbox {
     margin-bottom: -1px !important;
 }
 
-#toolbar-menubar {
+/* Hide superfluous toolbars */
+#toolbar-menubar, #PersonalToolbar, #addon-bar {
     display: none !important;
 }
 
+/* Inactive Tabs */
+.tabbrowser-tab {
+    background: #546e7a !important;
+    background-image: none !important;
+    color: white !important;
+    -moz-border-colors: none !important;
+    border: none !important;
+    border-radius: 0px !important;
+    border-image: none !important;
+    margin: 0px !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+}
+
+/* Active Tabs */
+.tabbrowser-tab[selected] {
+    font-weight: normal !important;
+    background: #607d8b !important;
+    border: none !important;
+}
+
+/* In maximized windows */
+#main-window[sizemode="maximized"] #TabsToolbar {
+    margin-left: -12px !important;
+}
+
+#main-window[sizemode="maximized"] .tabbrowser-tab {
+    margin: 0px 3px 0px 2px !important;
+}
+
+/* Hide the tab elements */
+.tabbrowser-tab:after, .tabbrowser-tab:before, .tab-background, .tab-throbber, .tab-icon-image, .tab-icon-overlay, #new-tab-button, #alltabs-button, .tabs-newtab-button {
+    display: none !important;
+}
+
+/* Custom close button */
+.tab-close-button {
+    background: none !important;
+    font-family: Material-Design-Iconic-Font !important;
+    font-size: 14px !important;
+}
+
+.tab-close-button:after {
+    color: #b0bec5 !important;
+    content: "" !important; /* close */
+}
+
+.tab-close-button:hover:after {
+    color: white !important;
+}
+
+/* Hide navbar */
 #nav-bar {
     display: none !important;
 }
 
-#PersonalToolbar {
-    display: none !important;
-}
-
-#addon-bar {
-    display: none !important;
-}
-
-.tabs-newtab-button {
-    display: none !important;
-}
-
-.tabbrowser-tab[selected="true"] {
-    font-weight: bold;
-}
-
-.tabbrowser-tab {
-    background: transparent !important;
-    background-image: none !important;
-    color: white !important;
-    border-style: none !important;
+/* Navbar (old) */
+#nav-bar {
+    background: #607d8b !important;
+    margin: 0px !important;
+    padding: 0px !important;
     border-radius: 0px !important;
-    border-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
-.tabbrowser-tab .tab-background {
+#back-button, #forward-button {
     display: none !important;
 }
 
-.tab-throbber {
+#urlbar #identity-box {
+    background: transparent !important;
+    border: none !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+#notification-popup-box {
     display: none !important;
 }
 
-.tab-icon-image {
+#urlbar #urlbar-icons, #urlbar #urlbar-go-button, #urlbar #urlbar-reload-button, #urlbar #urlbar-stop-button {
     display: none !important;
 }
 
-.tab-icon-overlay {
+#urlbar .urlbar-history-dropmarker {
     display: none !important;
 }
 
-.tab-close-button {
+#urlbar {
+    background-color: rgba(255, 255, 255, 0.4) !important;
+    border-radius: 2px !important;
+    border-width: 0px !important;
+    padding: 4px !important;
+    padding-left: 8px !important;
+    margin: 6px !important;
+    margin-left: 12px !important;
+    color: white !important;
+    box-shadow: none !important;
+}
+
+#identity-box:after {
+    font-family: Material-Design-Iconic-Font !important;
+    font-size: 16px !important;
+    color: white !important;
+    margin-left: 2px !important;
+    margin-right: 6px !important;
+    display: -moz-box !important;
+}
+
+#identity-box.unknownIdentity:after {
+    content: "" !important; /* globe */
+}
+
+#identity-box.verifiedDomain:after, #identity-box.verifiedIdentity:after {
+    content: "" !important; /* lock */
+}
+
+#identity-box image {
     display: none !important;
 }
 
-#new-tab-button {
+#PanelUI-button {
     display: none !important;
 }
 
-#alltabs-button {
-    display: none !important;
+/* Vimperator */
+#liberator-bottombar {
+    border: none !important;
+    background: #455a64 !important;
+    color: #e0e0e0 !important;
+    font-family: Inconsolata-g !important;
+    font-size: 12px !important;
+}
+
+#liberator-bottombar-deck {
+    background: #455a64 !important;
 }
