@@ -46,8 +46,9 @@ set tabstop=4
 set softtabstop=4
 match ColorColumn /\s\+$/
 
-" don't let vim-pandoc-syntax be annoying and hide things
+" don't let vim-pandoc be annoying
 let g:pandoc#syntax#conceal#use=0
+let g:pandoc#spell#enabled=0
 
 " latexbox configuration
 let g:LatexBox_latexmk_async=1
