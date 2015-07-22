@@ -1,5 +1,5 @@
 !! Fonts !!
-*font: xft:Inconsolata-g:style=g:size=10,xft:FontAwesome:style=regular
+*font: xft:Inconsolata-g:size=10,xft:FontAwesome
 !*boldFont: xft:Inconsolata-g:style=g:size=10,xft:FontAwesome:style=regular
 
 !! Colors !!
