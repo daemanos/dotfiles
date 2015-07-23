@@ -2,6 +2,7 @@ PATH="$HOME/bin:$PATH"
 
 bindkeys &
 xrdb -merge ~/.Xresources &
+xsetroot -cursor_name left_ptr &
 xflux -z 15228 &
 xautolock -locker $HOME/bin/lock &
 chbg -r &
