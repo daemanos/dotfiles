@@ -1,6 +1,7 @@
 PATH="$HOME/bin:$PATH"
 
 bindkeys &
+syndaemon -d -i 0.5
 xrdb -merge ~/.Xresources &
 xsetroot -cursor_name left_ptr &
 xflux -z 15228 &
