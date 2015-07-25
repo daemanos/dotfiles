@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# helpers
+cfg() { bspc config "$@"; }
+
+# setup monitors
+bspc monitor -d I II III IV V VI VII VIII IX X
+
+# borders and gaps
+cfg border_width                 2
+cfg window_gap                   10
+cfg focused_border_color         "#607D8B"
+cfg active_border_color          "#607D8B"
+cfg normal_border_color          "#455A64"
+cfg presel_border_color          "#37474F"
+cfg focused_locked_border_color  "#607D8B"
+cfg active_locked_border_color   "#607D8B"
+cfg normal_locked_border_color   "#455A64"
+cfg focused_sticky_border_color  "#607D8B"
+cfg active_sticky_border_color   "#607D8B"
+cfg normal_sticky_border_color   "#455A64"
+cfg focused_private_border_color "#607D8B"
+cfg active_private_border_color  "#607D8B"
+cfg normal_private_border_color  "#455A64"
+cfg urgent_border_color          "#FFAB40"
+cfg borderless_monocle           true
+cfg gapless_monocle              true
+
+# focus
+cfg focus_follows_pointer        true
+cfg pointer_follows_monitor      false
+
+# rules
+bspc rule -a dialog floating=on
+
+# misc
+cfg apply_floating_atom          true
