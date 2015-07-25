@@ -12,3 +12,5 @@ super + d
     ~/bin/launcher
 ctrl + shift + k ; {g,e,a,h,c,j,r}
     setxkbmap {gr,us,ara,il,cn,jp,ru}
+ctrl + alt + p
+    $PANEL_HOME/reset
