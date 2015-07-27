@@ -67,7 +67,7 @@
 }
 
 /* Private Browsing Indicator */
-#private-browsing-indicator {
+#main-window[privatebrowsingmode="temporary"] #private-browsing-indicator {
     background: none !important;
     width: 26px !important;
     min-height: 26px !important;
@@ -76,7 +76,7 @@
     position: relative !important;
 }
 
-#private-browsing-indicator:after {
+#main-window[privatebrowsingmode="temporary"] #private-browsing-indicator:after {
     font-family: Material-Design-Iconic-Font;
     font-size: 14px;
     display: -moz-box;
