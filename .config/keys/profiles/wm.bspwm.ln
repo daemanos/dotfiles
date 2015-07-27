@@ -28,8 +28,8 @@ super + e
 super + shift + c
     bspc window -c
 
-super + {_,shift + }n
-    bspc window -f {next,prev}
+super + c
+    bspc window -f next
 
 super + {comma,period}
     bspc desktop -f {prev,next}
