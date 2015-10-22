@@ -1,5 +1,5 @@
 !! Fonts !!
-*font: xft:Inconsolata-g:size=10
+*font: xft:Iosevka:size=10
 
 !! Colors !!
 ! special
@@ -39,3 +39,7 @@ URxvt.title: Terminal
 URxvt.scrollBar: false
 URxvt.url-select.launcher:  /usr/bin/luakit
 URxvt.url-select.underline: true
+
+!! Bell !!
+XTerm*bellIsUrgent: true
+URxvt.urgentOnBell: true

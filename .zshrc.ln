@@ -1,7 +1,11 @@
+# initial setup
+autoload -U compinit
+compinit
+
 # special directories
 export DOTFILES="$HOME/dotfiles"
 export ECLIPSE_HOME="/usr/share/eclipse"
-export TRASH="$HOME/trash"
+export TRASH="$HOME/.trash"
 export BIN="$HOME/bin"
 
 # XDG base directories
@@ -17,7 +21,7 @@ export PANEL_CONFIG=$PANEL_HOME/config
 
 # paths
 export MANPATH="/usr/local/man:/usr/local/git/man:$MANPATH"
-export PATH="$DOTFILES/util:$BIN:$PATH"
+export PATH="$BIN:$PATH"
 
 # application defaults
 export EDITOR="vim"
@@ -25,7 +29,7 @@ export VISUAL="vim"
 export PAGER="less"
 export GIT_EDITOR="$EDITOR"
 export GEM_EDITOR="$EDITOR"
-export BROWSER="chromium"
+export BROWSER="firefox"
 
 # file/directory operations
 alias mkdir='mkdir -pv'
@@ -34,8 +38,13 @@ alias ls='ls -hHF --color --group-directories-first'
 alias la='ls -A'
 alias ll='ls -l'
 alias le='ls -Al'
-alias lf='ls -1 | wc -1'
+alias lf='ls -1 | wc -l'
 lh() { du -h $1/* | sort -hr; }
+alias ..='cd ..'
+alias ...='cd ../..'
+del() {
+    mv -t $TRASH $1
+}
 
 # for safety
 alias cp='cp -i'
@@ -61,25 +70,23 @@ alias pacro='sudo aura -Oj'
 alias aurs='sudo aura -Ax'
 alias aurup='sudo aura -Axyu'
 
-# catize
-alias catln='catize link'
-alias catls='catize list'
-alias catman='catize info'
-alias ciff='catize diff'
-
 # misc system commands
 alias ping='ping -c 5'
 alias dmesg='dmesg -HL'
-alias grep='grep --color'
 alias cls=' echo -ne "\033c"' # clear the screen
-alias svim='vim --servername vim0'
-hdu() { find $HOME -mindepth 1 -maxdepth 1 -type d | while read dir; do; basename $dir; done | xargs du -hs 2>/dev/null | sort -rh; }
+alias svim='vim --servername'
+alias clip='xclip -selection clipboard'
+alias tovim="vim $HOME/doc/todo"
+
+# for fun
+alias thi='toilet -f future --gay "Hello, world!"'
 
 # aesthetics
 source $HOME/bin/base16-md
 autoload colors && colors
-PROMPT="%{$fg_bold[white]%(1j $fg[green] )>$fg[white]%(?  $fg[red])>$reset_color%} "
-RPROMPT=""
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+PROMPT="%{$fg_bold[white]%}%(1j $fg[green] )>%{$fg[white]%}%(?  $fg[red])>%{$reset_color%} "
+RPROMPT="%{$fg_bold[black]%}%~%{$reset_color%}"
 if [ -n "$TMUX" ]; then
     export TERM=screen-256color
 else

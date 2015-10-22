@@ -1,9 +1,9 @@
 super + Return
     urxvt
 super + w
-    firefox
+    luakit
 super + W
-    firefox --private-window
+    luakit -U -u private
 super + f
     urxvt -e ranger
 super + m

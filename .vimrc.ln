@@ -13,7 +13,9 @@ Plugin 'cespare/vim-toml'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'Xe/lolcode.vim'
 
+Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -22,6 +24,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'majutsushi/tagbar'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'dhruvasagar/vim-table-mode'
 call vundle#end()
 filetype plugin indent on
 
@@ -46,9 +49,22 @@ set tabstop=4
 set softtabstop=4
 match ColorColumn /\s\+$/
 
-" don't let vim-pandoc be annoying
-let g:pandoc#syntax#conceal#use=0
+" splits
+set splitbelow
+set splitright
+nnoremap <c-j> <c-w><c-j>
+nnoremap <c-k> <c-w><c-k>
+nnoremap <c-l> <c-w><c-l>
+nnoremap <c-h> <c-w><c-h>
+
+" airline
+set laststatus=2
+let g:airline_left_sep=""
+
+" misc
+set nowrap
 let g:pandoc#spell#enabled=0
+set omnifunc=syntaxcomplete#Complete
 
 " latexbox configuration
 let g:LatexBox_latexmk_async=1
@@ -59,6 +75,28 @@ let g:LatexBox_output_type="pdf"
 let g:LatexBox_Folding=0
 
 " maps
+map <F5> :!%:p<CR>
 nnoremap <leader>m :silent make\|redraw!\|cc<CR>
 nnoremap <leader>x :!%:p<CR>
 nmap <leader>d :NERDTreeToggle<CR>
+
+" smart tabs (from http://vim.wikia.com/wiki/Smart_mapping_for_tab_completion)
+function! Smart_TabComplete()
+  let line = getline('.')
+
+  let substr = strpart(line, -1, col('.')+1)
+  let substr = matchstr(substr, "[^ \t]*$")
+  if (strlen(substr)==0)
+    return "\<tab>"
+  endif
+  let has_period = match(substr, '\.') != -1
+  let has_slash = match(substr, '\/') != -1
+  if (!has_period && !has_slash)
+    return "\<C-X>\<C-P>"
+  elseif ( has_slash )
+    return "\<C-X>\<C-F>"
+  else
+    return "\<C-X>\<C-O>"
+  endif
+endfunction
+inoremap <tab> <c-r>=Smart_TabComplete()<CR>

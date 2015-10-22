@@ -1,5 +1,5 @@
 [global]
-    font = "Inconsolata-g 9"
+    font = "Inconsolata-g 8"
 
     # %a  appname
     # %s  summary
@@ -14,8 +14,8 @@
     # coordinates prefixed with + are from the left and top edge of the screen
     #                           - are from the right and bottom edge
     geometry = "400x26"
-    padding = 5
-    horizontal_padding = 5
+    padding = 7
+    horizontal_padding = 7
     dmenu = /usr/bin/dmenu -p dunst:
     browser = /usr/bin/chromium -new-tab
     icon_position = off
@@ -26,12 +26,12 @@
 [urgency_low]
     background = "#455a64"
     foreground = "#ffffff"
-    timeout = 6
+    timeout = 2
 
 [urgency_normal]
     background = "#455a64"
     foreground = "#ffffff"
-    timeout = 6
+    timeout = 3
 
 [urgency_critical]
     background = "#455a64"

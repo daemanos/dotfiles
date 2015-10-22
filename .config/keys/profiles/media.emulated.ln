@@ -1,9 +1,7 @@
 super + p
     mpc toggle
-super + b
-    mpc prev
-super + n
-    mpc next
+super + {_,shift + }n
+    mpc {next,prev}
 super + shift + p
     mpc stop
 super + ctrl + m ; {r,z,y,R}

@@ -149,9 +149,9 @@ map gh cd ~
 map E  edit
 map du shell -p du --max-depth=1 -h --apparent-size
 map dU shell -p du --max-depth=1 -h --apparent-size | sort -rh
-map yp shell -d echo -n %d/%f | xsel -bi
-map yd shell -d echo -n %d    | xsel -bi
-map yn shell -d echo -n %f    | xsel -bi
+map yp shell -d echo -n %d/%f | xsel -i
+map yd shell -d echo -n %d    | xsel -i
+map yn shell -d echo -n %f    | xsel -i
 map bb shell chbg %f
 
 # Filesystem Operations
@@ -170,7 +170,7 @@ map x  cut
 map ud uncut
 map da cut mode=add
 map dr cut mode=remove
-map d! shell mv -t ${TRASH:-$HOME/trash} %s
+map d! shell mv -t $HOME/.trash %s
 
 map yy copy
 map uy uncut

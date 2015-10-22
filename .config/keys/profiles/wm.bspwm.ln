@@ -25,11 +25,11 @@ super + grave
 super + e
     bspc window -s biggest
 
-super + shift + c
+super + q
     bspc window -c
 
-super + c
-    bspc window -f next
+super + {_,shift + }c
+    bspc window -f {next,prev}
 
 super + {comma,period}
     bspc desktop -f {prev,next}
