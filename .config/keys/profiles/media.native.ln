@@ -8,11 +8,17 @@ XF86AudioStop
     mpc stop
 
 XF86AudioRaiseVolume
-    amixer set Master 1%+
+    amixer set Master -c1 1%+
 XF86AudioLowerVolume
-    amixer set Master 1%-
+    amixer set Master -c1 1%-
 XF86AudioMute
-    amixer set Master toggle
+    amixer set Master -c1 toggle
 
 XF86Sleep
     ~/bin/lock
+
+XF86KbdBrightnessDown
+    xbacklight -dec 1
+
+XF86KbdBrightnessUp
+    xbacklight -inc 1
