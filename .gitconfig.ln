@@ -7,7 +7,7 @@
 	helper = cache
 [push]
 	default = simple
-[url "ssh://git@github.com/"]
-    insteadOf = https://github.com/
-    insteadOf = http://github.com/
-    insteadOf = git://github.com/
+;[url "ssh://git@github.com/"]
+;    insteadOf = https://github.com/
+    ;insteadOf = http://github.com/
+    ;insteadOf = git://github.com/
