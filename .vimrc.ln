@@ -60,6 +60,7 @@ nnoremap <c-h> <c-w><c-h>
 " airline
 set laststatus=2
 let g:airline_left_sep=""
+let g:airline_right_sep=""
 
 " misc
 set nowrap
@@ -79,6 +80,7 @@ map <F5> :!%:p<CR>
 nnoremap <leader>m :silent make\|redraw!\|cc<CR>
 nnoremap <leader>x :!%:p<CR>
 nmap <leader>d :NERDTreeToggle<CR>
+nmap <leader>t :TagbarToggle<CR>
 
 " smart tabs (from http://vim.wikia.com/wiki/Smart_mapping_for_tab_completion)
 function! Smart_TabComplete()
