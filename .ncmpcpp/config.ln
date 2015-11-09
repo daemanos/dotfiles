@@ -12,12 +12,12 @@ playlist_disable_highlight_delay = "0"
 message_delay_time = "5"
 
 # formatting
-song_columns_list_format = "(7f)[blue]{l} (50)[blue]{t|f:Title} (20)[blue]{a} (20)[blue]{b}"
-song_list_format = "{%a - }{%t}|{%f}$R{(%l)}"
-song_status_format = {{%a{ "%b"} - }{%t}}|{%f}
-song_library_format = "{%n - }{%t}|{%f}"
-tag_editor_album_format = "%b"
-browser_sort_format = "{%a - }{%t}|{%f} {(%l)}"
+#song_columns_list_format = "(7f)[blue]{l} (50)[blue]{t|f:Title} (20)[blue]{a} (20)[blue]{b}"
+#song_list_format = "{%a - }{%t}|{%f}$R{(%l)}"
+#song_status_format = {{%a{ "%b"} - }{%t}}|{%f}
+#song_library_format = "{%n - }{%t}|{%f}"
+#tag_editor_album_format = "%b"
+#browser_sort_format = "{%a - }{%t}|{%f} {(%l)}"
 enable_window_title = "no"
 
 browser_playlist_prefix = "$2playlist$9 "
@@ -28,12 +28,11 @@ selected_item_suffix = "$/b"
 modified_item_prefix = "$3> $9"
 
 titles_visibility = "no"
-header_visibility = "no"
-statusbar_visibility = "no"
+header_visibility = "yes"
+statusbar_visibility = "yes"
 
 # miscellanea
 progressbar_look = "── "
-user_interface = "classic"
 mouse_support = "no"
 screen_switcher_mode = "previous"
 ignore_leading_the = "yes"

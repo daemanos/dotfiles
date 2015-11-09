@@ -57,6 +57,7 @@ alias chgrp='chgrp --preserve-root'
 # pacman/aura
 alias pacman='sudo pacman'
 alias pacs='sudo pacman -S'
+alias pacu='sudo pacman -U'
 alias pacup='sudo pacman -Syu'
 alias pacul='sudo pacman -Syu linux linux-headers'
 alias pacr='sudo pacman -R'
@@ -64,11 +65,14 @@ alias pacd='sudo pacman -Rs'
 alias pacq='pacman -Q'
 pacls() { pacman -Ql $1 | sed -r "s/^$1 (.*)$/\1/g" ; }
 alias paci='pacman -Qi'
-alias paco='aura -O'
+alias paco='pacman -Qtdq'
+alias pacoo='pacman -Qttdq'
 alias pacro='sudo aura -Oj'
 
-alias aurs='sudo aura -Ax'
-alias aurup='sudo aura -Axyu'
+alias aurs='aurget -S'
+alias aurup='aurget -Su'
+alias aurq='aurget -Ss'
+alias auri='aurget -Si'
 
 # misc system commands
 alias ping='ping -c 5'

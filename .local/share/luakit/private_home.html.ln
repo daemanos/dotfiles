@@ -1,0 +1,125 @@
+<!doctype html5>
+<html>
+    <head>
+        <title>Welcome Home</title>
+        <meta charset="utf-8">
+        <style type="text/css">
+body {
+    background: #607d8b;
+}
+
+#wrapper {
+    width: 589px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+}
+
+#title {
+    font-family: Inconsolata-g;
+    font-weight: normal;
+    font-size: 24px;
+    color: white;
+}
+
+#title:before {
+    color: #b0bec5;
+    content: "$ ";
+}
+
+#title i {
+    font-style: normal;
+    color: #ffd740;
+}
+
+table {
+    margin-left: 60px;
+    border-spacing: 50px 0;
+}
+
+th, td {
+    font-family: Material-Design-Iconic-Font;
+    font-size: 48px;
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+}
+
+td {
+    padding: 0px;
+}
+
+td a {
+    display: block;
+    padding: 20px;
+    color: #b0bec5;
+    text-decoration: none;
+    text-align: center;
+}
+
+a.ico {
+    font-family: Material-Design-Iconic-Font;
+    transition-duration: 0.1s;
+    transition-property: color;
+}
+
+a.fa {
+    font-family: FontAwesome;
+}
+
+a.ico:hover, a.ico:focus, a.ico:active {
+    color: #eceff1
+}
+
+p {
+    font-family: Inconsolata-g;
+}
+
+#note {
+    color: #ffab40;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+#explainer {
+    color: #b0bec5;
+    margin-top: 0px;
+}
+
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1 id="title">welcome --private "<i>$USER</i>"</h1>
+            <table>
+                <tr>
+                    <th id="dev"></th>
+                    <th id="soc"></th>
+                    <th id="edu"></th>
+                </tr>
+                <tr>
+                    <td><a class="ico" href="http://www.github.com"></a></td>
+                    <td><a class="fa ico" href="http://www.reddit.com"></a></td>
+                    <td><a class="ico" href="http://www.wikipedia.org"></a></td>
+                </tr>
+                <tr>
+                    <td><a class="ico" href="http://www.stackoverflow.com"></a></td>
+                    <td><a class="ico" href="http://www.twitter.com"></a></td>
+                    <td><a class="ico" href="http://www.amazon.com"></a></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><a class="fa ico" href="http://news.ycombinator.com"></a></td>
+                    <td><a class="fa ico" href="http://www.yelp.com"></a></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><a class="fa ico" href="http://www.youtube.com"></a></td>
+                </tr>
+            </table>
+            <p id="note">Disclaimer</p>
+            <p id="explainer">History won't be saved during this session. However, be wary of potential spies, like government agencies, your ISP, or people standing behind you.</p>
+        </div>
+    </body>
+</html>
