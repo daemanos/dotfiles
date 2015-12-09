@@ -1,12 +1,10 @@
 #!/bin/bash
 
-# setup monitors
-bspc monitor -d I II III IV V VI VII VIII IX X
-
 # borders and gaps
 bspc config border_width 2
 bspc config window_gap 10
 
+# le pretty colors
 focused_color="#78909c"
 active_color="#78909c"
 normal_color="#546e7a"
@@ -32,11 +30,14 @@ bspc config presel_border_color "$presel_color"
 bspc config urgent_border_color "$urgent_color"
 
 bspc config borderless_monocle true
-bspc config gapless_monocle true
+bspc config gapless_monocle    true
 
 # focus
 bspc config focus_follows_pointer true
 bspc config pointer_follows_monitor false
+
+# setup monitors
+bspc monitor -d I II III IV V VI VII VIII IX X
 
 # rules
 bspc rule -a dialog floating=on
