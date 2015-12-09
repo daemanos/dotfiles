@@ -5,9 +5,9 @@ super + w
 super + W
     luakit -U -u private
 super + f
-    urxvt -e ranger
+    urxvt -e zsh -ic ranger
 super + m
-    urxvt -T 'Media Player' -e ncmpcpp
+    urxvt -e ncmpcpp
 super + d
     ~/bin/launcher
 ctrl + shift + k ; {g,e,a,h,c,j,r}
