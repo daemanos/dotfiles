@@ -1,0 +1,6 @@
+set default-bg "#ffffff"
+set statusbar-bg "#607d8b"
+set statusbar-fg "#ffffff"
+set statusbar-v-padding 8
+set statusbar-basename true
+set font "Iosevka regular 12"
