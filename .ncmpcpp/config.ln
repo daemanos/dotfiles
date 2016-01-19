@@ -12,7 +12,7 @@ playlist_disable_highlight_delay = "0"
 message_delay_time = "5"
 
 # formatting
-#song_columns_list_format = "(7f)[blue]{l} (50)[blue]{t|f:Title} (20)[blue]{a} (20)[blue]{b}"
+song_columns_list_format = "(30)[green]{a} (50)[white]{t|f:Title} (7f)[blue]{l}"
 #song_list_format = "{%a - }{%t}|{%f}$R{(%l)}"
 #song_status_format = {{%a{ "%b"} - }{%t}}|{%f}
 #song_library_format = "{%n - }{%t}|{%f}"
@@ -28,11 +28,11 @@ selected_item_suffix = "$/b"
 modified_item_prefix = "$3> $9"
 
 titles_visibility = "no"
-header_visibility = "yes"
+header_visibility = "no"
 statusbar_visibility = "yes"
 
 # miscellanea
-progressbar_look = "── "
+progressbar_look = "─╼ "
 mouse_support = "no"
 screen_switcher_mode = "previous"
 ignore_leading_the = "yes"
