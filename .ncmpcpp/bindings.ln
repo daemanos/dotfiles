@@ -28,12 +28,6 @@ def_key "home"
 def_key "end"
   move_end
 
-def_key "space"
-  press_space
-
-def_key "enter"
-  press_enter
-
 def_key "delete"
   delete_playlist_items
 
@@ -169,9 +163,6 @@ def_key "R"
 def_key "Y"
   toggle_replay_gain_mode
 
-def_key "t"
-  toggle_space_mode
-
 def_key "T"
   toggle_add_mode
 
@@ -198,9 +189,6 @@ def_key "ctrl_v"
 
 def_key "ctrl_r"
   reverse_playlist
-
-def_key "ctrl_f"
-  apply_filter
 
 def_key "/"
   find
