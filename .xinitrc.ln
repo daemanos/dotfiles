@@ -10,4 +10,5 @@ compton -b
 unclutter --timeout 3 --fork
 mpd &
 $HOME/.config/panel/panel &
+bash $HOME/.xinitrc.local &
 exec bspwm
