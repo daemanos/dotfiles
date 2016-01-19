@@ -1,8 +1,10 @@
 #!/bin/bash
+source $HOME/.config/panel/config
 
 # borders and gaps
 bspc config border_width 2
 bspc config window_gap 10
+bspc config top_padding $(($height+10))
 
 # le pretty colors
 focused_color="#78909c"
@@ -29,8 +31,8 @@ bspc config normal_private_border_color "$normal_color"
 bspc config presel_border_color "$presel_color"
 bspc config urgent_border_color "$urgent_color"
 
-bspc config borderless_monocle true
-bspc config gapless_monocle    true
+bspc config borderless_monocle false
+bspc config gapless_monocle    false
 
 # focus
 bspc config focus_follows_pointer true
