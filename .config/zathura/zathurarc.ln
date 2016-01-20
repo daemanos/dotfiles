@@ -1,4 +1,4 @@
-set default-bg "#ffffff"
+set default-bg "#78909c"
 set statusbar-bg "#607d8b"
 set statusbar-fg "#ffffff"
 set statusbar-v-padding 8
