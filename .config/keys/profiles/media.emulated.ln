@@ -8,9 +8,9 @@ super + ctrl + m ; {r,z,y,R}
     mpc {repeat,random,single,consume}
 
 super + shift + period
-    amixer set Master 1%+ && ~/bin/vol_pop
+    amixer set Master 3%+ && ~/bin/vol_pop
 super + shift + comma
-    amixer set Master 1%- && ~/bin/vol_pop
+    amixer set Master 3%- && ~/bin/vol_pop
 super + shift + slash
     amixer set Master toggle
 
