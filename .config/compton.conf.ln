@@ -7,9 +7,3 @@ shadow-offset-x = 0;
 shadow-offset-y = 0;
 shadow-opacity = 0.2;
 shadow-exclude = [ "class_i = 'dmenu'" ];
-fade-step = 2;
-
-wintypes:
-{
-    dock = { fade = true; };
-};
