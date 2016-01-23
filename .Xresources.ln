@@ -9,8 +9,9 @@
 !! URxvt !!
 URxvt.title: Terminal
 URxvt.scrollBar: false
-URxvt.url-select.launcher:  /usr/bin/luakit
-URxvt.url-select.underline: true
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher:  /usr/bin/luakit
+URxvt.matcher.button: 1
 
 !! Bell !!
 XTerm*bellIsUrgent: true
