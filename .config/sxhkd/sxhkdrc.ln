@@ -30,7 +30,7 @@ ctrl + alt + p
     ~/.config/panel/panel &
 
 ctrl + alt + k
-    ~/bin/bindkeys
+    killall -SIGUSR1 sxhkd
 
 super + shift + z
     ~/bin/lock
