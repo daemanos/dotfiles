@@ -1,6 +1,6 @@
 PATH="$HOME/bin:$PATH"
 
-bindkeys &
+sxhkd &
 xrdb -merge ~/.Xresources &
 xsetroot -cursor_name left_ptr &
 xflux -z 15228 &
@@ -10,5 +10,5 @@ compton -b
 unclutter --timeout 3 --fork
 mpd &
 $HOME/.config/panel/panel &
-bash $HOME/.xinitrc.local &
+$HOME/.xinitrc.local &
 exec bspwm
