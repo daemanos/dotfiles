@@ -35,7 +35,7 @@ ctrl + alt + k
 super + shift + z
     ~/bin/lock
 
-super + H
+super + y
     urxvt -e zsh -ic htop
 
 
@@ -79,7 +79,7 @@ super + alt + Escape
     bspc quit
 
 super + {_,shift + ,ctrl + }{h,j,k,l}
-    bspc window -{f,s,p} {left,down,up,right}
+    bspc node -{f,s,p} {west,south,north,east}
 
 super + t
     bspc desktop -l next
@@ -88,22 +88,22 @@ super + {_,shift + }b
     bspc desktop -{B,E}
 
 super + {s,F}
-    bspc window -t {floating,fullscreen}
+    bspc node -t {floating,fullscreen}
 
 super + {_,shift + }BackSpace
-    bspc {window,desktop} -f last
+    bspc {node,desktop} -f last
 
 super + grave
-    bspc window -s last
+    bspc node -s last
 
 super + e
-    bspc window -s biggest
+    bspc node -s biggest
 
 super + q
-    bspc window -c
+    bspc node -c
 
 super + {_,shift + }c
-    bspc window -f {next,prev}
+    bspc node -f {next,prev}
 
 super + {comma,period}
     bspc desktop -f {prev,next}
@@ -112,16 +112,16 @@ super + bracket{left,right}
     bspc desktop -C {backward,forward}
 
 super + ctrl + {_,shift + }space
-    bspc {window -p cancel,desktop -c}
+    bspc {node -p cancel,desktop -c}
 
 super + alt + {h,j,k,l}
-    bspc window -e {left -10,down +10,up -10,right +10}
+    bspc node -e {west -10,south +10,north -10,east +10}
 
 super + alt + shift + {h,j,k,l}
-    bspc window -e {right -10,up +10,down -10,left +10}
+    bspc node -e {east -10,north +10,south -10,west +10}
 
 super + {_, shift + }{1-9,0}
-    bspc {desktop -f,window -d} ^{1-9,10}
+    bspc {desktop -f,node -d} ^{1-9,10}
 
 ~button1
     bspc pointer -g focus
