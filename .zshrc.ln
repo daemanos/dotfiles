@@ -22,6 +22,7 @@ export PANEL_CONFIG=$PANEL_HOME/config
 # paths
 export MANPATH="/usr/local/man:/usr/local/git/man:$MANPATH"
 export PATH="$BIN:$PATH"
+export PYTHONPATH="$HOME/lib"
 
 # application defaults
 export EDITOR="vim"
@@ -45,6 +46,7 @@ alias ...='cd ../..'
 del() {
     mv -t $TRASH $1
 }
+alias dus='du -hs $(find -mindepth 1 -maxdepth 1) 2>/dev/null | sort -hr'
 
 # for safety
 alias cp='cp -i'
