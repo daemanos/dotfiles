@@ -9,10 +9,10 @@ super + Return
     urxvt
 
 super + w
-    luakit
+    chromium
 
 super + W
-    luakit -U -u private
+    chromium --incognito
 
 super + f
     urxvt -e zsh -ic ranger
