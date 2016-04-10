@@ -1,6 +1,7 @@
 # initial setup
-autoload -U compinit
-compinit
+# apparently this now causes zsh to complain when I use vim so
+#autoload -U compinit
+#compinit
 
 # special directories
 export DOTFILES="$HOME/dotfiles"
@@ -56,12 +57,12 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
-# pacman/aura
+# pacman
 alias pacman='sudo pacman'
-alias pacs='sudo pacman -S'
+alias pacs='pacaur -S'
 alias pacu='sudo pacman -U'
-alias pacup='sudo pacman -Syu'
-alias pacul='sudo pacman -Syu linux linux-headers'
+alias pacup='pacaur -Syu'
+alias pacul='pacaur -Syu linux linux-headers'
 alias pacr='sudo pacman -R'
 alias pacd='sudo pacman -Rs'
 alias pacq='pacman -Q'
@@ -69,12 +70,6 @@ pacls() { pacman -Ql $1 | sed -r "s/^$1 (.*)$/\1/g" ; }
 alias paci='pacman -Qi'
 alias paco='pacman -Qtdq'
 alias pacoo='pacman -Qttdq'
-alias pacro='sudo aura -Oj'
-
-alias aurs='aurget -S'
-alias aurup='aurget -Su'
-alias aurq='aurget -Ss'
-alias auri='aurget -Si'
 
 # misc system commands
 alias ping='ping -c 5'
