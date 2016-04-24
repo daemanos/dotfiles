@@ -10,7 +10,7 @@
 URxvt.title: Terminal
 URxvt.scrollBar: false
 URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher:  /usr/bin/luakit
+URxvt.url-launcher:  /usr/bin/chromium
 URxvt.matcher.button: 1
 
 !! Bell !!
