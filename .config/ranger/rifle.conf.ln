@@ -72,6 +72,7 @@ ext midi?, terminal, has wildmidi = wildmidi -- "$@"
 mime ^video, flag f = mpv -- "$@"
 
 # Image Viewing
+ext gif,     X, flag f = sxiv -a "$@"
 mime ^image, X, flag f = sxiv -- "$@"
 ext xcf,     X, flag f = gimp -- "$@"
 
