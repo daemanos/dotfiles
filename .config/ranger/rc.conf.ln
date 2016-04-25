@@ -134,7 +134,7 @@ map gg         move to=0
 map G          move to=-1
 map <C-F>      move down=1   pages=True
 map <C-B>      move up=1     pages=True
-map <DELETE>   console delete
+map <DELETE>   delete
 
 # Jumping around
 map H     history_go -1
