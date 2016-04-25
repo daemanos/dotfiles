@@ -1,7 +1,6 @@
 # initial setup
-# apparently this now causes zsh to complain when I use vim so
-#autoload -U compinit
-#compinit
+autoload -U compinit
+compinit
 
 # special directories
 export DOTFILES="$HOME/dotfiles"
