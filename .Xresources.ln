@@ -1,18 +1,7 @@
-!! Fonts !!
 *font: xft:Iosevka:size=10:style=Regular
-
-!! Colors !!
-! special
 *background: #455a64
 *foreground: #e0e0e0
 
-!! URxvt !!
-URxvt.title: Terminal
-URxvt.scrollBar: false
-URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher:  /usr/bin/chromium
-URxvt.matcher.button: 1
-
-!! Bell !!
-XTerm*bellIsUrgent: true
-URxvt.urgentOnBell: true
+URxvt*title: Terminal
+URxvt*scrollBar: false
+URxvt*urgentOnBell: true
