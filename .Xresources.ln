@@ -1,4 +1,4 @@
-*font: xft:Iosevka:size=10:style=Regular
+*font: xft:Iosevka:size=10:style=Regular,xft:Noto Emoji:size=10
 *background: #455a64
 *foreground: #e0e0e0
 
