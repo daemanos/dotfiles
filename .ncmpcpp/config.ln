@@ -33,7 +33,7 @@ statusbar_visibility = "no"
 
 # miscellanea
 progressbar_look = "─╼ "
-mouse_support = "no"
+mouse_support = "yes"
 screen_switcher_mode = "previous"
 ignore_leading_the = "yes"
 external_editor = "vim"
