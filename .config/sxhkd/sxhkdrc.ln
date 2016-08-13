@@ -84,8 +84,8 @@ super + t
 super + {_,shift + }b
     bspc desktop -{B,E}
 
-super + {s,F,y}
-    bspc node -t {floating,fullscreen,tiled}
+super + {s,F,y,Y}
+    bspc node -t {floating,fullscreen,tiled,pseudo_tiled}
 
 super + {_,shift + }BackSpace
     bspc {node,desktop} -f last
