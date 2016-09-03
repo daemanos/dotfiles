@@ -5,7 +5,6 @@ Plug 'chriskempson/base16-vim'
 Plug 'wting/rust.vim'
 Plug 'derekwyatt/vim-scala'
 Plug 'cespare/vim-toml'
-Plug 'plasticboy/vim-markdown'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 
