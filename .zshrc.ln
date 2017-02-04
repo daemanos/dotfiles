@@ -22,7 +22,6 @@ export PANEL_CONFIG=$PANEL_HOME/config
 # paths
 export MANPATH="/usr/local/man:/usr/local/git/man:$MANPATH"
 export PATH="$BIN:$PATH"
-export PYTHONPATH="$HOME/lib"
 
 # application defaults
 export EDITOR="vim"
@@ -69,6 +68,14 @@ pacls() { pacman -Ql $1 | sed -r "s/^$1 (.*)$/\1/g" ; }
 alias paci='pacman -Qi'
 alias paco='pacman -Qtdq'
 alias pacoo='pacman -Qttdq'
+
+# git
+alias gs='git status'
+alias go='git commit'
+alias gp='git push'
+alias gf='git pull'
+alias glo='git log'
+alias glone='git clone'
 
 # misc system commands
 alias ping='ping -c 5'

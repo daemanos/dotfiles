@@ -20,9 +20,10 @@
 }
 
 /* Hide superfluous toolbars */
-#toolbar-menubar, #PersonalToolbar, #addon-bar, #nav-bar {
+/*#toolbar-menubar, #PersonalToolbar, #addon-bar, #nav-bar {
     display: none !important;
 }
+*/
 
 /* Inactive Tabs */
 .tabbrowser-tab {
