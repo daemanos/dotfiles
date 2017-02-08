@@ -43,10 +43,10 @@ super + shift + z
 # =============
 
 
-super + p
+XF86AudioPlay
     mpc toggle
 
-super + {_,shift + }n
+XF86Audio{Next,Prev}
     mpc {next,prev}
 
 super + shift + p
@@ -55,13 +55,10 @@ super + shift + p
 super + ctrl + m ; {r,z,y,R}
     mpc {repeat,random,single,consume}
 
-super + shift + period
-    amixer set Master 3%+ && ~/bin/vol_pop
+XF86Audio{Raise,Lower}Volume
+    amixer set Master 3%{+,-} && ~/bin/vol_pop
 
-super + shift + comma
-    amixer set Master 3%- && ~/bin/vol_pop
-
-super + shift + slash
+XF86AudioMute
     amixer set Master toggle
 
 
