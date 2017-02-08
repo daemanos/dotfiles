@@ -37,7 +37,7 @@ set undodir=~/.vim/undo//
 syntax enable
 set background=dark
 let base16colorspace=256
-colorscheme base16-flat
+colorscheme base16-ashes
 hi Normal ctermbg=none
 hi LineNr ctermbg=none cterm=bold
 hi NonText ctermbg=none

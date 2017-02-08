@@ -89,7 +89,7 @@ alias tovim="vim $HOME/doc/todo"
 alias thi='toilet -f future --gay "Hello, world!"'
 
 # aesthetics
-source $HOME/bin/base16-md
+source $HOME/bin/base16-ashes
 autoload colors && colors
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 PROMPT="%{$fg_bold[white]%}%(1j $fg[green] )>%{$fg[white]%}%(?  $fg[red])>%{$reset_color%} "

@@ -4,14 +4,14 @@ source $HOME/.config/panel/config
 # borders and gaps
 bspc config border_width 2
 bspc config window_gap 10
-bspc config top_padding $(($height+$y))
+bspc config bottom_padding $(($height+$y))
 bspc config honor_size_hints false
 
 # le pretty colors
-focused_color="#78909c"
-active_color="#78909c"
-normal_color="#546e7a"
-presel_color="#37474f"
+focused_color="#747c84"
+active_color="#747c84"
+normal_color="#1c2023"
+presel_color="#c79595"
 urgent_color="#ffab40"
 
 bspc config focused_border_color "$focused_color"
