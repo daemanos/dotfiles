@@ -100,7 +100,7 @@ super + q
     bspc node -c
 
 super + {_,shift + }c
-    bspc node -f {next,prev}
+    bspc node -f {next,prev}.local
 
 super + {comma,period}
     bspc desktop -f {prev,next}
