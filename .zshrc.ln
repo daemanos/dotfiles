@@ -43,9 +43,8 @@ alias lf='ls -1 | wc -l'
 lh() { du -h $1/* | sort -hr; }
 alias ..='cd ..'
 alias ...='cd ../..'
-del() {
-    mv -t $TRASH $1
-}
+del() { mv -t $TRASH $1 }
+empty() { rm -r $1 && mkdir $1 >/dev/null }
 alias dus='du -hs $(find -mindepth 1 -maxdepth 1) 2>/dev/null | sort -hr'
 
 # for safety
@@ -61,7 +60,7 @@ alias pacman='sudo pacman'
 alias pacs='pacaur -S'
 alias pacu='sudo pacman -U'
 alias pacup='pacaur -Syu'
-alias pacul='pacaur -Syu linux linux-headers'
+alias pacul='pacaur -S linux linux-headers --noconfirm'
 alias pacr='sudo pacman -R'
 alias pacd='sudo pacman -Rs'
 alias pacq='pacman -Q'
