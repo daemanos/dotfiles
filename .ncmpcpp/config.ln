@@ -39,6 +39,7 @@ ignore_leading_the = "yes"
 external_editor = "vim"
 use_console_editor = "yes"
 browser_sort_mode = "name"
+media_library_primary_tag = "album_artist"
 
 # colors
 colors_enabled = "yes"

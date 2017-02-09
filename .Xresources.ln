@@ -1,6 +1,6 @@
 *font: xft:Iosevka:size=10:style=Regular,xft:Noto Emoji:size=10
-*background: #455a64
-*foreground: #e0e0e0
+*background: #1c2023
+*foreground: #c7ccd1
 
 URxvt*title: Terminal
 URxvt*scrollBar: false
