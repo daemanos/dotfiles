@@ -7,3 +7,5 @@ URxvt*scrollBar: false
 URxvt*urgentOnBell: true
 URxvt*internalBorder: 10
 URxvt*letterSpace: -1
+
+#include ".Xresources.local"
