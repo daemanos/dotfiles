@@ -49,6 +49,7 @@ nnoremap <c-h> <c-w><c-h>
 
 " airline
 set laststatus=2
+set noshowmode
 let g:airline_left_sep=""
 let g:airline_right_sep=""
 
@@ -57,6 +58,7 @@ set nowrap
 set omnifunc=syntaxcomplete#Complete
 
 " recognize pandoc syntax
+let g:pandoc#syntax#conceal#use = 0
 augroup pandoc_syntax
     au! BufNewFile,BufFilePRe,BufRead *.md set filetype=markdown.pandoc
 augroup END
@@ -69,3 +71,24 @@ nnoremap <leader>m :silent make\|redraw!\|cc<CR>
 nnoremap <leader>x :!%:p<CR>
 nmap <leader>d :NERDTreeToggle<CR>
 nmap <leader>t :TagbarToggle<CR>
+
+" focus mode
+function! ToggleFocusMode()
+    if (&foldcolumn != 12)
+        set laststatus=0
+        set numberwidth=10
+        set foldcolumn=12
+        set noruler
+        hi FoldColumn ctermbg=none
+        hi LineNr ctermfg=0 ctermbg=none cterm=none
+        hi NonText ctermfg=0
+    else
+        set laststatus=2
+        set numberwidth=4
+        set foldcolumn=0
+        set ruler
+        execute 'colorscheme ' . g:colors_name
+        hi LineNr ctermbg=none cterm=bold
+    endif
+endfunc
+nnoremap <F1> :call ToggleFocusMode()<cr>
