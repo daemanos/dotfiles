@@ -24,27 +24,29 @@ export MANPATH="/usr/local/man:/usr/local/git/man:$MANPATH"
 export PATH="$BIN:$PATH"
 
 # application defaults
-export EDITOR="vim"
+export EDITOR="nvim"
 export VISUAL="vim"
 export PAGER="less"
 export GIT_EDITOR="$EDITOR"
 export GEM_EDITOR="$EDITOR"
 export BROWSER="firefox"
+export FILE_MANAGER="ranger"
 
 # file/directory operations
 alias mkdir='mkdir -pv'
 alias ds='du -hs'
-alias ls='ls -hHF --color --group-directories-first'
-alias la='ls -A'
-alias ll='ls -l'
-alias le='ls -Al'
-alias lf='ls -1 | wc -l'
+alias l='ls -hHF --color --group-directories-first'
+alias la='l -A'
+alias ll='l -l'
+alias lal='l -Al'
+alias lf='l -1 | wc -l'
 lh() { du -h $1/* | sort -hr; }
 alias ..='cd ..'
 alias ...='cd ../..'
 del() { mv -t $TRASH $1 }
 empty() { rm -r $1 && mkdir $1 >/dev/null }
 alias dus='du -hs $(find -mindepth 1 -maxdepth 1) 2>/dev/null | sort -hr'
+alias f="$FILE_MANAGER"
 
 # for safety
 alias cp='cp -i'
@@ -71,6 +73,7 @@ alias pacoo='pacman -Qttdq'
 # git
 alias gs='git status'
 alias go='git commit'
+alias gd='git diff'
 alias gp='git push'
 alias gf='git pull'
 alias glo='git log'
@@ -82,7 +85,7 @@ alias dmesg='dmesg -HL'
 alias cls=' echo -ne "\033c"' # clear the screen
 alias svim='vim --servername'
 alias clip='xclip -selection clipboard'
-alias tovim="vim $HOME/doc/todo"
+alias e="$EDITOR"
 
 # for fun
 alias thi='toilet -f future --gay "Hello, world!"'
