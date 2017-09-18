@@ -78,6 +78,8 @@ alias gp='git push'
 alias gf='git pull'
 alias glo='git log'
 alias glone='git clone'
+alias ga='git add'
+alias gA='git add -A'
 
 # misc system commands
 alias ping='ping -c 5'
