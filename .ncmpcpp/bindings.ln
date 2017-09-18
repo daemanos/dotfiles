@@ -61,9 +61,6 @@ def_key ":"
 def_key "tab"
   next_screen
 
-def_key "shift_tab"
-  previous_screen
-
 def_key "f1"
   show_help
 
@@ -118,22 +115,10 @@ def_key ">"
 def_key "<"
   previous
 
-def_key "ctrl_h"
-  jump_to_parent_directory
-
-def_key "ctrl_h"
-  replay_song
-
 def_key "backspace"
   jump_to_parent_directory
 
 def_key "backspace"
-  replay_song
-
-def_key "backspace_2"
-  jump_to_parent_directory
-
-def_key "backspace_2"
   replay_song
 
 def_key "f"
@@ -183,12 +168,6 @@ def_key "X"
 
 def_key "u"
   update_database
-
-def_key "ctrl_v"
-  sort_playlist
-
-def_key "ctrl_r"
-  reverse_playlist
 
 def_key "/"
   find
@@ -325,9 +304,6 @@ def_key "L"
 def_key "F"
   toggle_fetching_lyrics_in_background
 
-def_key "ctrl_l"
-  toggle_screen_lock
-
 def_key "`"
   toggle_browser_sort_mode
 
@@ -339,9 +315,6 @@ def_key "`"
 
 def_key "`"
   add_random_items
-
-def_key "ctrl_p"
-  set_selected_items_priority
 
 def_key "q"
   quit
