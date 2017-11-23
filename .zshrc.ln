@@ -6,7 +6,7 @@ compinit
 export DOTFILES="$HOME/dotfiles"
 export ECLIPSE_HOME="/usr/share/eclipse"
 export TRASH="$HOME/.trash"
-export BIN="$HOME/bin"
+export BIN="$HOME/.local/bin"
 
 # XDG base directories
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -29,7 +29,7 @@ export VISUAL="vim"
 export PAGER="less"
 export GIT_EDITOR="$EDITOR"
 export GEM_EDITOR="$EDITOR"
-export BROWSER="firefox"
+export BROWSER="chromium"
 export FILE_MANAGER="ranger"
 
 # file/directory operations
@@ -81,23 +81,31 @@ alias glone='git clone'
 alias ga='git add'
 alias gA='git add -A'
 
+# task
+alias t='task'
+alias ta='task add'
+alias td='task done'
+
 # misc system commands
 alias ping='ping -c 5'
 alias dmesg='dmesg -HL'
 alias cls=' echo -ne "\033c"' # clear the screen
 alias svim='vim --servername'
 alias clip='xclip -selection clipboard'
+alias c="cd"
+mc() { mkdir -p "$1" && cd "$1" ; }
 alias e="$EDITOR"
+alias ydl=youtube-dl
 
 # for fun
 alias thi='toilet -f future --gay "Hello, world!"'
 
 # aesthetics
-source $HOME/bin/base16-ashes
+source $BIN/base16-ashes
 autoload colors && colors
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 PROMPT="%{$fg_bold[white]%}%(1j $fg[green] )>%{$fg[white]%}%(?  $fg[red])>%{$reset_color%} "
-RPROMPT="%{$fg_bold[black]%}%~%{$reset_color%}"
+RPROMPT="%{$fg_bold[black]%}%m:%~%{$reset_color%}"
 if [ -n "$TMUX" ]; then
     export TERM=screen-256color
 else
