@@ -21,7 +21,7 @@ super + m
     urxvt -e zsh -ic ncmpcpp
 
 super + d
-    ~/bin/launcher
+    ~/.local/bin/launcher
 
 ctrl + shift + k ; {g,e,a,h,c,j,r}
     setxkbmap {gr,us,ara,il,cn,jp,ru}
@@ -33,7 +33,7 @@ ctrl + alt + k
     pkill -SIGUSR1 sxhkd
 
 super + shift + z
-    ~/bin/lock
+    ~/.local/bin/lock
 
 
 # =============
@@ -59,7 +59,7 @@ super + ctrl + m ; {r,z,y,R}
     mpc {repeat,random,single,consume}
 
 XF86Audio{Raise,Lower}Volume
-    amixer set Master 3%{+,-} && ~/bin/vol_pop
+    amixer set Master 3%{+,-} && ~/.local/bin/vol_pop
 
 XF86AudioMute
     amixer -D pulse set Master 1+ toggle

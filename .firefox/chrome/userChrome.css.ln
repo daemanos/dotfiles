@@ -9,27 +9,27 @@
 
 #TabsToolbar {
     background: transparent !important;
-    margin-right: -25px !important;
-    margin-left: -18px !important;
+     margin-right: -25px !important;
+     margin-left: -18px !important;
     min-height: 26px !important;
-    background: #455a64 !important;
+    background: #1c2023 !important;
 }
 
 .tabbrowser-tabs {
-    border-bottom: 4px solid #607d8b !important;
+    border-bottom: 4px solid #ae95c7 !important;
 }
 
 /* Hide superfluous toolbars */
-/*#toolbar-menubar, #PersonalToolbar, #addon-bar, #nav-bar {
+#toolbar-menubar, #PersonalToolbar, #addon-bar, #nav-bar {
     display: none !important;
 }
-*/
+
 
 /* Inactive Tabs */
 .tabbrowser-tab {
-    background: #546e7a !important;
+    background: transparent !important;
     background-image: none !important;
-    color: white !important;
+    color: #f3f4f5 !important;
     -moz-border-colors: none !important;
     border: none !important;
     border-radius: 0px !important;
@@ -42,7 +42,7 @@
 /* Active Tabs */
 .tabbrowser-tab[selected] {
     font-weight: normal !important;
-    background: #607d8b !important;
+    background: #ae95c7 !important;
     border: none !important;
 }
 
@@ -54,13 +54,13 @@
 /* Custom close button */
 .tab-close-button {
     background: none !important;
-    font-family: Material-Design-Iconic-Font !important;
+    font-family: FontAwesome !important;
     font-size: 14px !important;
 }
 
 .tab-close-button:after {
-    color: #b0bec5 !important;
-    content: "" !important; /* close */
+    color: #f3f4f5 !important;
+    content: "" !important; /* close */
 }
 
 .tab-close-button:hover:after {
@@ -73,12 +73,12 @@
     width: 26px !important;
     min-height: 26px !important;
     display: -moz-box !important;
-    border-bottom: 4px solid #607d8b !important;
+    border-bottom: 4px solid #747c84 !important;
     position: relative !important;
 }
 
 #main-window[privatebrowsingmode="temporary"] #private-browsing-indicator:after {
-    font-family: Material-Design-Iconic-Font;
+    font-family: MaterialDesignIconicFont;
     font-size: 14px;
     display: -moz-box;
     color: white;

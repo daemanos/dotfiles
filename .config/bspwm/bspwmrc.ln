@@ -4,7 +4,8 @@ source $HOME/.config/panel/config
 # borders and gaps
 bspc config border_width 2
 bspc config window_gap 10
-bspc config bottom_padding $(($height+$y))
+bspc config bottom_padding 0
+bspc config top_padding $(($height+$y))
 
 # le pretty colors
 focused_color="#747c84"

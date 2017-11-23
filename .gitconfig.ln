@@ -4,7 +4,7 @@
 	name = Octaplex
 	email = damanm72@gmail.com
 [credential]
-	helper = cache
+	helper = libsecret
 [push]
 	default = simple
 ;[url "ssh://git@github.com/"]
