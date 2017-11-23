@@ -3,11 +3,11 @@
 [user]
 	name = Octaplex
 	email = damanm72@gmail.com
-[credential]
-	helper = libsecret
+;[credential]
+    ;helper = libsecret
 [push]
 	default = simple
-;[url "ssh://git@github.com/"]
-;    insteadOf = https://github.com/
-    ;insteadOf = http://github.com/
-    ;insteadOf = git://github.com/
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
+    insteadOf = http://github.com/
+    insteadOf = git://github.com/
