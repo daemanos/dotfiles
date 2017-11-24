@@ -96,6 +96,7 @@ alias c="cd"
 mc() { mkdir -p "$1" && cd "$1" ; }
 alias e="$EDITOR"
 alias ydl=youtube-dl
+alias x='exit'
 
 # for fun
 alias thi='toilet -f future --gay "Hello, world!"'
