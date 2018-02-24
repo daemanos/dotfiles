@@ -1,11 +1,13 @@
 *font: xft:Iosevka:size=10:autohint=false:antialias=true
-*background: #1c2023
-*foreground: #c7ccd1
+*background: #fdf6e3
+*foreground: #586e75
 
 URxvt*title: Terminal
 URxvt*scrollBar: false
 URxvt*urgentOnBell: true
 URxvt*internalBorder: 10
 URxvt*letterSpace: -1
+
+URxvt.perl-ext-common: resize-font
 
 #include ".Xresources.local"

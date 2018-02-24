@@ -21,7 +21,9 @@ export PANEL_CONFIG=$PANEL_HOME/config
 
 # paths
 export MANPATH="/usr/local/man:/usr/local/git/man:$MANPATH"
-export PATH="$BIN:$PATH"
+export GEM_HOME=$HOME/.gem
+export PATH="$BIN:$PATH:$GEM_HOME/bin"
+export PYTHONPATH="/home/daman/.local/lib/python:/home/daman/.local/lib/python3.6/site-packages"
 
 # application defaults
 export EDITOR="nvim"
@@ -31,6 +33,7 @@ export GIT_EDITOR="$EDITOR"
 export GEM_EDITOR="$EDITOR"
 export BROWSER="chromium"
 export FILE_MANAGER="ranger"
+export PDF_VIEWER="zathura"
 
 # file/directory operations
 alias mkdir='mkdir -pv'
@@ -97,12 +100,13 @@ mc() { mkdir -p "$1" && cd "$1" ; }
 alias e="$EDITOR"
 alias ydl=youtube-dl
 alias x='exit'
+alias dup='urxvt &'
 
 # for fun
 alias thi='toilet -f future --gay "Hello, world!"'
 
 # aesthetics
-source $BIN/base16-ashes
+source $HOME/.config/colors/colors.sh
 autoload colors && colors
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 PROMPT="%{$fg_bold[white]%}%(1j $fg[green] )>%{$fg[white]%}%(?  $fg[red])>%{$reset_color%} "
