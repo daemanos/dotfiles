@@ -1,6 +1,6 @@
-set default-bg "#1c2023"
-set statusbar-bg "#1c2023"
-set statusbar-fg "#c7ccd1"
+set default-bg "#fdf6e3"
+set statusbar-bg "#fdf6e3"
+set statusbar-fg "#586e75"
 set statusbar-v-padding 8
 set statusbar-basename true
 set font "Iosevka regular 10"
