@@ -2,12 +2,35 @@
 *background: #fdf6e3
 *foreground: #586e75
 
+*color0: #fdf6e3
+*color1: #dc322f
+*color2: #859900
+*color3: #268bd2
+*color4: #268bd2
+*color5: #6c71c4
+*color6: #2aa198
+*color7: #586e75
+*color8: #839496
+*color9: #dc322f
+*color10: #859900
+*color11: #268bd2
+*color12: #268bd2
+*color13: #6c71c4
+*color14: #2aa198
+*color15: #002b36
+
 URxvt*title: Terminal
 URxvt*scrollBar: false
 URxvt*urgentOnBell: true
 URxvt*internalBorder: 10
 URxvt*letterSpace: -1
 
-URxvt.perl-ext-common: resize-font
+URxvt.perl-ext-common: resize-font,tabbedex
+
+URxvt.tabbed.autohide: true
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tabbar-fg: 8
+URxvt.tabbed.tab-bg: 0
+URxvt.tabbed.tab-fg: 4
 
 #include ".Xresources.local"
