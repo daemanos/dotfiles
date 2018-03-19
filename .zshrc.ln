@@ -35,6 +35,8 @@ export BROWSER="chromium"
 export FILE_MANAGER="ranger"
 export PDF_VIEWER="zathura"
 
+[[ -z "$TMUX" ]] && exec tmux
+
 # file/directory operations
 alias mkdir='mkdir -pv'
 alias ds='du -hs'
@@ -49,12 +51,14 @@ alias ...='cd ../..'
 del() { mv -t $TRASH $1 }
 empty() { rm -r $1 && mkdir $1 >/dev/null }
 alias dus='du -hs $(find -mindepth 1 -maxdepth 1) 2>/dev/null | sort -hr'
-alias f="$FILE_MANAGER"
+alias fm="$FILE_MANAGER"
+alias o="rifle"
 
 # for safety
 alias cp='cp -i'
 alias mv='mv -i'
 alias ln='ln -i'
+alias rm='rm -I'
 alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
