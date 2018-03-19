@@ -8,6 +8,7 @@ Plug 'cespare/vim-toml'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'adimit/prolog.vim'
+Plug 'JuliaEditorSupport/julia-vim'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -25,9 +26,9 @@ set undodir=~/.config/nvim/undo//
 
 " aesthetics
 syntax enable
-set background=dark
+set background=light
 let base16colorspace=256
-colorscheme base16-ashes
+colorscheme base16-solarized-light
 let g:airline_theme='base16'
 hi Normal ctermbg=none
 hi LineNr ctermbg=none cterm=bold
@@ -67,8 +68,8 @@ augroup pandoc_syntax
     au! BufNewFile,BufFilePRe,BufRead *.md set filetype=markdown.pandoc
 augroup END
 
-" Use <C-L> to clear the highlighting of :set hlsearch.
-nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+" Use enter to clear the highlighting of :set hlsearch.
+nnoremap <CR> :noh<CR><CR>
 
 " maps
 nnoremap <leader>m :silent make\|redraw!\|cc<CR>
