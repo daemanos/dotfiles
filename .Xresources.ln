@@ -25,7 +25,8 @@ URxvt*urgentOnBell: true
 URxvt*internalBorder: 10
 URxvt*letterSpace: -1
 
-URxvt.perl-ext-common: resize-font,tabbedex
+!,tabbedex
+URxvt.perl-ext-common: resize-font
 
 URxvt.tabbed.autohide: true
 URxvt.tabbed.tabbar-bg: 0
