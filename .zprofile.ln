@@ -4,4 +4,6 @@
     #ssh-add "$HOME/.ssh/id_rsa_github"
 #fi
 export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
-[ -z "$DISPLAY" -a "$(fgconsole)" -eq 1 ] && exec startx
+if [ -z "$DISPLAY" ] && ["$(fgconsole)" -eq 1 ]; then
+    startx
+fi
