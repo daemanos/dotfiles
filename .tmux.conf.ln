@@ -20,6 +20,9 @@
 # -----------------------------------------------------------------------------
 # Global settings
 
+# Get rid of ESC delay
+set -sg escape-time 0
+
 # Set prefix key to Ctrl-a
 unbind-key C-b
 set-option -g prefix C-a
@@ -49,7 +52,7 @@ set -g bell-action any
 set -g base-index 0
 
 # instructs tmux to expect UTF-8 sequences
-setw -g utf8 on
+#setw -g utf8 on
 
 # tell tmux to use 256 colour terminal
 set -g default-terminal "screen-256color"
@@ -58,19 +61,16 @@ set -g default-terminal "screen-256color"
 setw -g xterm-keys on
 
 # control automatic window renaming
-setw -g automatic-rename off
+setw -g automatic-rename on
 
 # enable wm window titles
-set -g set-titles on
+set -g set-titles off
 
 
 # Key bindings
 
 # reload settings
 bind-key R source-file ~/.tmux.conf \; display-message ' Configuration updated'
-
-# open project
-bind-key P command-prompt -p ' Open project from workspace:' "if-shell '[ -d ~/Workspace/%1 ]' 'neww -c ~/Workspace/%1 -n dev@%1 ; split-window -hdc ~/Workspace/%1 ; run-shell vim'"
 
 # detach client
 bind-key d detach
@@ -86,17 +86,17 @@ bind-key '"' choose-session
 # display visible indicator of each pane
 bind-key w display-panes
 
-# navigate panes using jk, and ctrl+jk (no prefix)
+# navigate panes using jk, and shift+jk (no prefix)
 bind-key -r j select-pane -t :.-
 bind-key -r k select-pane -t :.+
-bind-key -r C-j select-pane -t :.-
-bind-key -r C-k select-pane -t :.+
+bind-key -n C-j select-pane -t :.-
+bind-key -n C-k select-pane -t :.+
 
-# navigate windows using hl, and ctrl-hl (no prefix)
+# navigate windows using hl, and shift-hl (no prefix)
 bind-key -r h select-window -t :-
 bind-key -r l select-window -t :+
-bind-key -r C-h select-window -t :-
-bind-key -r C-l select-window -t :+
+bind-key -n C-h select-window -t :-
+bind-key -n C-l select-window -t :+
 
 # swap panes
 bind-key -r J swap-pane -D
@@ -128,7 +128,7 @@ bind-key ] paste-buffer -s \015
 setw -g mode-keys vi
 
 # enable mouse selection in copy mode
-setw -g mode-mouse on
+#setw -g mode-mouse on
 
 # list all paste buffers (default key is '#')
 bind-key b list-buffers
@@ -143,8 +143,7 @@ bind-key x delete-buffer
 # Screen-like key bindings
 
 # new window
-bind-key C-c new-window
-bind-key c new-window
+bind-key n new-window
 
 # next
 bind-key -r Space next-window
@@ -197,16 +196,16 @@ set -g display-time 2000
 
 # messages
 set -g status-interval 1
-set -g status-left ' #[fg=colour3]#(whoami)#[fg=colour1]@#S#[fg=default]'
-set -g status-left-length 30
+set -g status-left ''
+set -g status-left-length 0
 set -g status-right ''
 set -g status-right-length 0
-setw -g window-status-format '[#I:#W]'
-setw -g window-status-current-format '[#I:#W]'
+setw -g window-status-format '[#I]'
+setw -g window-status-current-format '[#I]'
 
 # default statusbar colors
 set -g status-fg default
-set -g status-bg default
+set -g status-bg red
 set -g status-style default
 
 # window colors
