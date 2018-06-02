@@ -1,8 +1,10 @@
-# initial setup
+# Initial setup
 autoload -U compinit
 compinit
 
-# special directories
+zstyle ':completion:*:*:e:*' file-patterns '^*.(aux|log|pdf|aux|fls|fdb*):source-files' '*:all-files'
+
+# Special directories
 export DOTFILES="$HOME/dotfiles"
 export ECLIPSE_HOME="/usr/share/eclipse"
 export TRASH="$HOME/.trash"
@@ -15,29 +17,29 @@ export XDG_DATA_DIRS="/usr/local/share:/usr/share"
 export XDG_CONFIG_DIRS="/etc/xdg"
 export XDG_CACHE_HOME="$HOME/.cache"
 
-# panel files
+# Panel files
 export PANEL_HOME=$XDG_CONFIG_HOME/panel
 export PANEL_CONFIG=$PANEL_HOME/config
 
-# paths
+# Paths
 export MANPATH="/usr/local/man:/usr/local/git/man:$MANPATH"
 export GEM_HOME=$HOME/.gem
 export PATH="$BIN:$PATH:$GEM_HOME/bin"
 export PYTHONPATH="/home/daman/.local/lib/python:/home/daman/.local/lib/python3.6/site-packages"
 
-# application defaults
+# Application defaults
 export EDITOR="nvim"
 export VISUAL="vim"
 export PAGER="less"
 export GIT_EDITOR="$EDITOR"
 export GEM_EDITOR="$EDITOR"
-export BROWSER="chromium"
+export BROWSER="firefox"
 export FILE_MANAGER="ranger"
 export PDF_VIEWER="zathura"
 
-[[ -z "$TMUX" ]] && exec tmux
+[[ -z "$TMUX" ]] && [[ -z "$SKIP_TMUX" ]] && exec tmux
 
-# file/directory operations
+# File/directory operations
 alias mkdir='mkdir -pv'
 alias ds='du -hs'
 alias l='ls -hHF --color --group-directories-first'
@@ -54,7 +56,7 @@ alias dus='du -hs $(find -mindepth 1 -maxdepth 1) 2>/dev/null | sort -hr'
 alias fm="$FILE_MANAGER"
 alias o="rifle"
 
-# for safety
+# For safety
 alias cp='cp -i'
 alias mv='mv -i'
 alias ln='ln -i'
@@ -63,7 +65,7 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
-# pacman
+# Pacman
 alias pacman='sudo pacman'
 alias pacs='pacaur -S'
 alias pacu='sudo pacman -U'
@@ -77,7 +79,7 @@ alias paci='pacman -Qi'
 alias paco='pacman -Qtdq'
 alias pacoo='pacman -Qttdq'
 
-# git
+# Git
 alias gs='git status'
 alias go='git commit'
 alias gd='git diff'
@@ -87,13 +89,19 @@ alias glo='git log'
 alias glone='git clone'
 alias ga='git add'
 alias gA='git add -A'
+alias gcb='git checkout -b'
 
-# task
+# Task
 alias t='task'
 alias ta='task add'
 alias td='task done'
 
-# misc system commands
+# Systemd
+alias stl='sudo systemctl'
+alias snow='sudo systemctl enable --now'
+alias jtl='journalctl'
+
+# Misc. system commands
 alias ping='ping -c 5'
 alias dmesg='dmesg -HL'
 alias cls=' echo -ne "\033c"' # clear the screen
@@ -104,12 +112,9 @@ mc() { mkdir -p "$1" && cd "$1" ; }
 alias e="$EDITOR"
 alias ydl=youtube-dl
 alias x='exit'
-alias dup='urxvt &'
+alias dup='tmux neww'
 
-# for fun
-alias thi='toilet -f future --gay "Hello, world!"'
-
-# aesthetics
+# Aesthetics
 source $HOME/.config/colors/colors.sh
 autoload colors && colors
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -123,5 +128,5 @@ fi
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-# secret stuff
+# Secret stuff
 [ -e ~/.localrc ] && source ~/.localrc || true

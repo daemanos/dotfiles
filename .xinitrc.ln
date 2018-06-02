@@ -5,7 +5,7 @@ sxhkd &
 xrdb -merge ~/.Xresources &
 xsetroot -cursor_name left_ptr &
 xflux -z 15228 &
-xautolock -locker $HOME/.local/bin/lock &
+xautolock -locker $HOME/.local/bin/lock -corners -000 &
 hsetroot -fill ~/img/desktop
 compton -b
 unclutter --timeout 3 --fork

@@ -1,7 +1,7 @@
 [core]
 	excludesfile = ~/.gitignore
 [user]
-	name = Octaplex
+	name = Daman Morris
 	email = damanm72@gmail.com
 ;[credential]
     ;helper = libsecret

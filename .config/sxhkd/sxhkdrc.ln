@@ -15,10 +15,10 @@ super + W
     chromium --incognito
 
 super + f
-    urxvt -e zsh -ic ranger
+    urxvt -e zsh -c ranger
 
 super + m
-    urxvt -e zsh -ic ncmpcpp
+    urxvt -e ncmpcpp
 
 super + d
     ~/.local/bin/launcher

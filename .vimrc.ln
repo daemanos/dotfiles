@@ -15,7 +15,8 @@ Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'Xe/lolcode.vim'
 
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -37,7 +38,7 @@ set undodir=~/.vim/undo//
 syntax enable
 set background=dark
 let base16colorspace=256
-colorscheme base16-ashes
+colorscheme base16-solarized-light
 hi Normal ctermbg=none
 hi LineNr ctermbg=none cterm=bold
 hi NonText ctermbg=none

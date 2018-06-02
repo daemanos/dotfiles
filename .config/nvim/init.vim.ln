@@ -12,11 +12,13 @@ Plug 'JuliaEditorSupport/julia-vim'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
+Plug 'eugen0329/vim-esearch'
+Plug 'tpope/vim-abolish'
 call plug#end()
 
 " swapfiles etc.
@@ -58,6 +60,15 @@ let g:airline_right_sep=""
 " syntastic
 let g:syntastic_java_checkers = ['checkstyle']
 
+" esearch
+let g:esearch = {
+            \ 'adapter': 'ag',
+            \ 'backend': 'nvim',
+            \ 'out': 'win',
+            \ 'batch_size': 1000,
+            \ 'use': ['visual', 'hlsearch', 'last'],
+            \}
+
 " misc
 set nowrap
 set omnifunc=syntaxcomplete#Complete
@@ -97,3 +108,7 @@ function! ToggleFocusMode()
     endif
 endfunc
 nnoremap <F1> :call ToggleFocusMode()<cr>
+
+" Enable project-specific configs
+set exrc
+set secure

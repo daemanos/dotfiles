@@ -1,4 +1,4 @@
-*font: xft:Iosevka:size=10:autohint=false:antialias=true
+URxvt*font: xft:Iosevka:size=10:autohint=false:antialias=true
 *background: #fdf6e3
 *foreground: #586e75
 

@@ -31,6 +31,7 @@ bspc monitor -d I II III IV V VI VII VIII IX X
 
 # rules
 bspc rule -a dialog floating=on
+bspc rule -a zathura tiled=on
 
 # misc
 bspc config ignore_ewmh_focus true
