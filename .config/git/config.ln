@@ -1,5 +1,5 @@
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.config/git/ignore
 [user]
 	name = Daman Morris
 	email = damanm72@gmail.com
