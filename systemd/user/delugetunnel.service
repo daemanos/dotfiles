@@ -1,0 +1,11 @@
+[Unit]
+Description=Deluge SSH tunnel
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+ExecStart=/usr/bin/ssh -F %h/.ssh/config -i %h/.ssh/id_ed25519_hq -NL 127.0.0.2:58846:localhost:58846 hq
+
+[Install]
+WantedBy=multi-user.target

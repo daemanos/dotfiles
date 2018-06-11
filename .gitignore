@@ -4,3 +4,6 @@
 mpd/*
 !mpd/mpd.conf
 ranger/colorschemes
+chromium
+systemd
+!systemd/*.service
