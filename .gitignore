@@ -7,3 +7,14 @@ ranger/colorschemes
 chromium
 systemd
 !systemd/*.service
+dconf
+deluge/*
+!deluge/*.conf
+GIMP
+guvcview2
+htop
+inkscape/*
+!inkscape/preferences.xml
+pulse
+syncthing/*
+!syncthing/config.xml
