@@ -1,0 +1,12 @@
+[[ -z "$TMUX" ]] && [[ -z "$SKIP_TMUX" ]] && exec tmux
+
+CONFIG_DIR="$HOME/.config/zsh"
+load() {
+    source "$CONFIG_DIR/$1.zsh"
+}
+
+load "init"
+load "vars"
+load "alias"
+load "style"
+load "local"

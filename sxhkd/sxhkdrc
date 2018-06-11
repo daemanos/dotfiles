@@ -35,6 +35,8 @@ ctrl + alt + k
 super + shift + z
     ~/.local/bin/lock
 
+super + b
+    ~/.local/bin/bat-notify
 
 # =============
 # ┏┳┓┏━╸╺┳┓╻┏━┓
@@ -134,7 +136,7 @@ super + @button{1-3}
 # ===============================
 
 
-XF86KbdBrightness{Down,Up}
+XF86MonBrightness{Down,Up}
     xbacklight -{dec,inc} 1
 
 super + g ; {s,w,d}

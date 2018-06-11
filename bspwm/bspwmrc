@@ -8,11 +8,11 @@ bspc config bottom_padding 0
 bspc config top_padding $(($height+$y))
 
 # le pretty colors
-focused_color="#b58900" # base 0A
-active_color="#839496" # base 03
-normal_color="#fdf6e3" # base 00
-presel_color="#d33682" # base 0F
-urgent_color="#dc322f" # base 08
+focused_color="#33b5e1" # base 0D
+active_color="#667581" # base 03
+normal_color="#667581" # base 00
+presel_color="#d73c9a" # base 0F
+urgent_color="#ef5253" # base 08
 
 bspc config focused_border_color "$focused_color"
 bspc config active_border_color "$active_color"

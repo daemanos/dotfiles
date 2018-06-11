@@ -1,0 +1,9 @@
+X11/Xresources:.Xresources
+X11/XCompose:.XCompose
+X11/init.sh:.xinitrc
+curl/config:.curlrc
+vim/config:.vimrc
+zsh/config:.zshrc
+zsh/profile:.zprofile
+tmux/config:.tmux.conf
+gtk-2.0/settings.ini:.gtkrc-2.0

@@ -1,1 +1,6 @@
-.diaspora
+*swp*
+*plugged*
+.netrwhist
+mpd/*
+!mpd/mpd.conf
+ranger/colorschemes
