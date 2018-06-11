@@ -12,8 +12,8 @@ export XDG_CONFIG_DIRS="/etc/xdg"
 export XDG_CACHE_HOME="$HOME/.cache"
 
 # Panel files
-export PANEL_HOME=$XDG_CONFIG_HOME/panel
-export PANEL_CONFIG=$PANEL_HOME/config
+export PANEL_HOME="$HOME/.local/panel"
+export PANEL_CONFIG="$PANEL_HOME/config"
 
 # Paths
 export MANPATH="/usr/local/man:/usr/local/git/man:$MANPATH"

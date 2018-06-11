@@ -27,7 +27,7 @@ ctrl + shift + k ; {g,e,a,h,c,j,r}
     setxkbmap {gr,us,ara,il,cn,jp,ru}
 
 ctrl + alt + p
-    ~/.config/panel/panel &
+    ~/.local/panel/panel &
 
 ctrl + alt + k
     pkill -SIGUSR1 sxhkd
