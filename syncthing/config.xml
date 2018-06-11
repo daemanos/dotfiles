@@ -1,0 +1,268 @@
+<configuration version="28">
+    <folder id="crypto" label="" path="/home/daman/.password-store" type="readwrite" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="HQU6XNC-3MEAVWI-6W5BXMK-ASD2WVJ-BY2DXYX-6BLZQVM-EGZIH6W-BEE7QA7" introducedBy="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE"></device>
+        <device id="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE" introducedBy=""></device>
+        <device id="ONWUIQJ-CY253G4-A4DBI7K-PXOHK5I-ULPMOL3-Q64CUUZ-VVSJDKJ-NDT3BQL" introducedBy=""></device>
+        <device id="WLWXKNF-PC6HFRH-O4R5TJL-3YIEQVE-LKQAIGQ-WRWVR6M-LBVLVFZ-HWE3DQT" introducedBy="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE"></device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning></versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+    </folder>
+    <folder id="doc" label="" path="~/doc" type="readwrite" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="HQU6XNC-3MEAVWI-6W5BXMK-ASD2WVJ-BY2DXYX-6BLZQVM-EGZIH6W-BEE7QA7" introducedBy="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE"></device>
+        <device id="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE" introducedBy=""></device>
+        <device id="ONWUIQJ-CY253G4-A4DBI7K-PXOHK5I-ULPMOL3-Q64CUUZ-VVSJDKJ-NDT3BQL" introducedBy=""></device>
+        <device id="WLWXKNF-PC6HFRH-O4R5TJL-3YIEQVE-LKQAIGQ-WRWVR6M-LBVLVFZ-HWE3DQT" introducedBy="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE"></device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning></versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>-1</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+    </folder>
+    <folder id="bwa5d-xbhsg" label="edu" path="/home/daman/edu" type="readwrite" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE" introducedBy=""></device>
+        <device id="ONWUIQJ-CY253G4-A4DBI7K-PXOHK5I-ULPMOL3-Q64CUUZ-VVSJDKJ-NDT3BQL" introducedBy=""></device>
+        <device id="WLWXKNF-PC6HFRH-O4R5TJL-3YIEQVE-LKQAIGQ-WRWVR6M-LBVLVFZ-HWE3DQT" introducedBy="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE"></device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning></versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+    </folder>
+    <folder id="img" label="" path="~/img" type="readwrite" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="HQU6XNC-3MEAVWI-6W5BXMK-ASD2WVJ-BY2DXYX-6BLZQVM-EGZIH6W-BEE7QA7" introducedBy="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE"></device>
+        <device id="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE" introducedBy=""></device>
+        <device id="ONWUIQJ-CY253G4-A4DBI7K-PXOHK5I-ULPMOL3-Q64CUUZ-VVSJDKJ-NDT3BQL" introducedBy=""></device>
+        <device id="WLWXKNF-PC6HFRH-O4R5TJL-3YIEQVE-LKQAIGQ-WRWVR6M-LBVLVFZ-HWE3DQT" introducedBy="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE"></device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning></versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>-1</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+    </folder>
+    <folder id="gnuzw-htsfe" label="langs" path="~/langs" type="readwrite" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE" introducedBy=""></device>
+        <device id="ONWUIQJ-CY253G4-A4DBI7K-PXOHK5I-ULPMOL3-Q64CUUZ-VVSJDKJ-NDT3BQL" introducedBy=""></device>
+        <device id="WLWXKNF-PC6HFRH-O4R5TJL-3YIEQVE-LKQAIGQ-WRWVR6M-LBVLVFZ-HWE3DQT" introducedBy="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE"></device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning></versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>-1</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+    </folder>
+    <folder id="library" label="" path="~/library" type="readwrite" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE" introducedBy=""></device>
+        <device id="ONWUIQJ-CY253G4-A4DBI7K-PXOHK5I-ULPMOL3-Q64CUUZ-VVSJDKJ-NDT3BQL" introducedBy=""></device>
+        <device id="WLWXKNF-PC6HFRH-O4R5TJL-3YIEQVE-LKQAIGQ-WRWVR6M-LBVLVFZ-HWE3DQT" introducedBy="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE"></device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning></versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>-1</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+    </folder>
+    <folder id="music" label="" path="~/music" type="readwrite" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="HQU6XNC-3MEAVWI-6W5BXMK-ASD2WVJ-BY2DXYX-6BLZQVM-EGZIH6W-BEE7QA7" introducedBy="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE"></device>
+        <device id="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE" introducedBy=""></device>
+        <device id="ONWUIQJ-CY253G4-A4DBI7K-PXOHK5I-ULPMOL3-Q64CUUZ-VVSJDKJ-NDT3BQL" introducedBy=""></device>
+        <device id="WLWXKNF-PC6HFRH-O4R5TJL-3YIEQVE-LKQAIGQ-WRWVR6M-LBVLVFZ-HWE3DQT" introducedBy="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE"></device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning></versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>-1</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+    </folder>
+    <folder id="eybwh-n2e6m" label="podcasts" path="~/podcasts" type="readwrite" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE" introducedBy=""></device>
+        <device id="ONWUIQJ-CY253G4-A4DBI7K-PXOHK5I-ULPMOL3-Q64CUUZ-VVSJDKJ-NDT3BQL" introducedBy=""></device>
+        <device id="WLWXKNF-PC6HFRH-O4R5TJL-3YIEQVE-LKQAIGQ-WRWVR6M-LBVLVFZ-HWE3DQT" introducedBy="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE"></device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning></versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>-1</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+    </folder>
+    <folder id="textbooks" label="" path="~/textbooks" type="readwrite" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE" introducedBy=""></device>
+        <device id="ONWUIQJ-CY253G4-A4DBI7K-PXOHK5I-ULPMOL3-Q64CUUZ-VVSJDKJ-NDT3BQL" introducedBy=""></device>
+        <device id="WLWXKNF-PC6HFRH-O4R5TJL-3YIEQVE-LKQAIGQ-WRWVR6M-LBVLVFZ-HWE3DQT" introducedBy="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE"></device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning></versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>-1</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+    </folder>
+    <device id="HQU6XNC-3MEAVWI-6W5BXMK-ASD2WVJ-BY2DXYX-6BLZQVM-EGZIH6W-BEE7QA7" name="phone" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE">
+        <address>dynamic</address>
+        <paused>false</paused>
+        <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
+    </device>
+    <device id="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE" name="laptop" compression="metadata" introducer="true" skipIntroductionRemovals="false" introducedBy="">
+        <address>dynamic</address>
+        <paused>false</paused>
+        <autoAcceptFolders>true</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
+    </device>
+    <device id="ONWUIQJ-CY253G4-A4DBI7K-PXOHK5I-ULPMOL3-Q64CUUZ-VVSJDKJ-NDT3BQL" name="tenkpat" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+        <address>dynamic</address>
+        <paused>false</paused>
+        <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
+    </device>
+    <device id="WLWXKNF-PC6HFRH-O4R5TJL-3YIEQVE-LKQAIGQ-WRWVR6M-LBVLVFZ-HWE3DQT" name="hq" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="J6AHHDK-EB3YZWU-6TYCQ2U-5SGD6S3-JVZ4KTW-YOPT4GE-QGGSMM7-KKR7JAE">
+        <address>dynamic</address>
+        <paused>false</paused>
+        <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
+    </device>
+    <gui enabled="true" tls="false" debugging="false">
+        <address>127.0.0.1:8384</address>
+        <apikey>ywVKGSpqjMr66MiNyuyWHMgzQQntGMUd</apikey>
+        <theme>default</theme>
+    </gui>
+    <options>
+        <listenAddress>default</listenAddress>
+        <globalAnnounceServer>default</globalAnnounceServer>
+        <globalAnnounceEnabled>true</globalAnnounceEnabled>
+        <localAnnounceEnabled>true</localAnnounceEnabled>
+        <localAnnouncePort>21027</localAnnouncePort>
+        <localAnnounceMCAddr>[ff12::8384]:21027</localAnnounceMCAddr>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
+        <reconnectionIntervalS>60</reconnectionIntervalS>
+        <relaysEnabled>true</relaysEnabled>
+        <relayReconnectIntervalM>10</relayReconnectIntervalM>
+        <startBrowser>true</startBrowser>
+        <natEnabled>true</natEnabled>
+        <natLeaseMinutes>60</natLeaseMinutes>
+        <natRenewalMinutes>30</natRenewalMinutes>
+        <natTimeoutSeconds>10</natTimeoutSeconds>
+        <urAccepted>3</urAccepted>
+        <urSeen>3</urSeen>
+        <urUniqueID>yivu7GE4</urUniqueID>
+        <urURL>https://data.syncthing.net/newdata</urURL>
+        <urPostInsecurely>false</urPostInsecurely>
+        <urInitialDelayS>1800</urInitialDelayS>
+        <restartOnWakeup>true</restartOnWakeup>
+        <autoUpgradeIntervalH>12</autoUpgradeIntervalH>
+        <upgradeToPreReleases>false</upgradeToPreReleases>
+        <keepTemporariesH>24</keepTemporariesH>
+        <cacheIgnoredFiles>false</cacheIgnoredFiles>
+        <progressUpdateIntervalS>5</progressUpdateIntervalS>
+        <limitBandwidthInLan>false</limitBandwidthInLan>
+        <minHomeDiskFree unit="%">1</minHomeDiskFree>
+        <releasesURL>https://upgrades.syncthing.net/meta.json</releasesURL>
+        <overwriteRemoteDeviceNamesOnConnect>false</overwriteRemoteDeviceNamesOnConnect>
+        <tempIndexMinBlocks>10</tempIndexMinBlocks>
+        <trafficClass>0</trafficClass>
+        <weakHashSelectionMethod>auto</weakHashSelectionMethod>
+        <defaultFolderPath>~</defaultFolderPath>
+        <setLowPriority>true</setLowPriority>
+        <minHomeDiskFreePct>0</minHomeDiskFreePct>
+    </options>
+</configuration>
