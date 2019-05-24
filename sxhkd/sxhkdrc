@@ -36,7 +36,10 @@ super + shift + z
     ~/.local/bin/lock
 
 super + b
-    ~/.local/bin/bat-notify
+    ~/.local/bin/bat-notify2
+
+super + semicolon
+    ~/.local/bin/timew_launcher
 
 # =============
 # ┏┳┓┏━╸╺┳┓╻┏━┓
@@ -46,19 +49,22 @@ super + b
 
 
 XF86AudioPlay
-    mpc toggle
+    playerctl play-pause
 
 XF86Audio{Next,Prev}
-    mpc {next,prev}
+    playerctl {next,previous}
 
 super + p
-    mpc toggle
+    playerctl play-pause
 
 super + bracket{right,left}
-    mpc {next,prev}
+    playerctl {next,previous}
 
-super + ctrl + m ; {r,z,y,R}
-    mpc {repeat,random,single,consume}
+super + ctrl + m ; {o,r,y}
+    playerctl loop {None,Playlist,Track}
+
+super + ctrl + m ; {s,S}
+    playerctl shuffle {Off,On}
 
 XF86Audio{Raise,Lower}Volume
     amixer set Master 3%{+,-} && ~/.local/bin/vol_pop
@@ -137,7 +143,7 @@ super + @button{1-3}
 
 
 XF86MonBrightness{Down,Up}
-    xbacklight -{dec,inc} 1
+    sudo ~/.local/bin/lum {dec,inc} 100 && ~/.local/bin/lum_pop
 
 super + g ; {s,w,d}
     scrot {-s,-u,} -e 'mv $f ~/img/shots/'

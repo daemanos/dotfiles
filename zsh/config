@@ -1,3 +1,4 @@
+# vim: set ft=zsh :
 [[ -z "$TMUX" ]] && [[ -z "$SKIP_TMUX" ]] && exec tmux
 
 CONFIG_DIR="$HOME/.config/zsh"

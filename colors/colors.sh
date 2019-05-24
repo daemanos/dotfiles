@@ -1,1 +1,1 @@
-base16-shell/scripts/base16-solarflare.sh
+base16-shell/scripts/base16-tomorrow.sh

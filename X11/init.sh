@@ -1,6 +1,6 @@
 PATH="$HOME/bin:$PATH"
 
-mpd &
+mopidy &
 sxhkd &
 xrdb -merge ~/.Xresources &
 xsetroot -cursor_name left_ptr &
@@ -12,4 +12,5 @@ unclutter --timeout 3 --fork
 $HOME/.local/panel/panel &
 $HOME/.xinitrc.local &
 
+#exec dbus-launch --autolaunch=$(cat /var/lib/dbus/machine-id) bspwm
 exec bspwm

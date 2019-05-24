@@ -39,21 +39,18 @@ alias paco='pacman -Qtdq'
 alias pacoo='pacman -Qttdq'
 
 # Git
+eval "$(hub alias -s)"
 alias gs='git status'
 alias go='git commit'
 alias gd='git diff'
-alias gp='git push'
-alias gf='git pull'
-alias glo='git log'
-alias glone='git clone'
 alias ga='git add'
-alias gA='git add -A'
 alias gcb='git checkout -b'
 
 # Task
 alias t='task'
 alias ta='task add'
-alias td='task done'
+alias fin='task done'
+alias tw='timew'
 
 # Systemd
 alias stl='sudo systemctl'

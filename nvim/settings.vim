@@ -18,6 +18,26 @@ set splitright
 set exrc
 set secure
 
+" Goyo settings
+function! s:goyo_enter()
+    silent !tmux set status off
+    set noshowmode
+    set noshowcmd
+    Limelight
+    setlocal wrap linebreak nolist
+endfunction
+
+function! s:goyo_leave()
+    silent !tmux set status on
+    set showmode
+    set showcmd
+    Limelight!
+    setlocal nowrap nolinebreak list
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
 " Miscellaneous
 set nowrap
 set wildignore+=*/build/**,*/tmp/*,*.so,*.swp,*.zip,*.aux

@@ -132,8 +132,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="997.143"
-         height="125.714"
+         width="662.66"
+         height="331.33"
          rx="0"
          ry="0" />
       <eventcontext
@@ -171,17 +171,17 @@
          end="0"
          start="0"
          usecurrent="1"
-         rx="200"
-         ry="200" />
+         rx="150"
+         ry="150" />
       <eventcontext
          id="star"
-         magnitude="6"
+         magnitude="7"
          style="fill:yellow;"
          usecurrent="1"
-         proportion="0.5"
+         proportion="0.426165"
          rounded="0"
          randomized="0"
-         isflatsided="0" />
+         isflatsided="1" />
       <eventcontext
          id="spiral"
          style="fill:none;stroke:black"
@@ -205,7 +205,7 @@
          mode="drag"
          selcue="1"
          style="stroke-width:1px;"
-         usecurrent="0" />
+         usecurrent="1" />
     </group>
     <eventcontext
        id="calligraphic"
@@ -335,11 +335,12 @@
        gradientdrag="1"
        font_sample="AaBbCcIiPpQq12369$€¢?.;/()"
        show_sample_in_list="1"
-       style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;letter-spacing:0px;word-spacing:0px"
-       selcue="1">
+       style="fill:black;fill-opacity:1;stroke:none;font-family:'Glanchlo GC';font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'Glanchlo GC';font-stretch:normal;font-variant:normal"
+       selcue="1"
+       align_mode="1">
       <group
-         id="lineheight"
-         display_unit="0" />
+         display_unit="0"
+         id="lineheight" />
     </eventcontext>
     <eventcontext
        id="nodes"
@@ -425,12 +426,12 @@
        offset="0"
        offsetunits="mm" />
     <group
-       unit="px"
-       id="measure"
-       fontsize="10"
-       precision="2"
+       offset="5"
        scale="100"
-       offset="5" />
+       precision="2"
+       fontsize="10"
+       id="measure"
+       unit="px" />
   </group>
   <group
      id="palette">
@@ -551,7 +552,7 @@
   </group>
   <group
      id="colorselector"
-     page="0" />
+     page="1" />
   <group
      id="embedded">
     <group
@@ -574,21 +575,46 @@
        panel_mode="1"
        panel_wrap="0"
        panel_border="0"
-       page="2"
+       page="0"
        x="0"
        y="0"
-       w="333"
-       h="424"
+       w="490"
+       h="564"
        visible="1"
-       state="2"
-       placement="5" />
+       state="3"
+       placement="1" />
     <group
        id="filtereffects" />
     <group
-       id="textandfont" />
+       id="textandfont"
+       panel_size="1"
+       panel_ratio="100"
+       panel_mode="1"
+       panel_wrap="0"
+       panel_border="0"
+       x="0"
+       y="0"
+       w="364"
+       h="338"
+       visible="0"
+       state="2"
+       placement="1" />
     <group
        id="transformation"
-       applyseparately="0" />
+       applyseparately="0"
+       panel_size="1"
+       panel_ratio="100"
+       panel_mode="1"
+       panel_wrap="0"
+       panel_border="0"
+       rotateCounterClockwise="0"
+       x="0"
+       y="0"
+       w="490"
+       h="564"
+       visible="1"
+       state="3"
+       placement="1" />
     <group
        id="align"
        panel_size="1"
@@ -600,11 +626,11 @@
        sel-as-groups="1"
        x="0"
        y="0"
-       w="322"
-       h="476"
-       visible="0"
+       w="244"
+       h="437"
+       visible="1"
        state="2"
-       placement="1" />
+       placement="5" />
     <group
        id="xml" />
     <group
@@ -617,7 +643,7 @@
        ignorenumbers="1" />
     <group
        id="documentoptions"
-       state="2"
+       state="3"
        panel_size="1"
        panel_ratio="100"
        panel_mode="1"
@@ -625,13 +651,23 @@
        panel_border="0"
        x="0"
        y="0"
-       w="485"
-       h="736"
-       visible="0"
+       w="490"
+       h="564"
+       visible="1"
        placement="1" />
     <group
        id="preferences"
-       state="1" />
+       state="1"
+       panel_size="1"
+       panel_ratio="100"
+       panel_mode="1"
+       panel_wrap="0"
+       panel_border="0"
+       x="741"
+       y="432"
+       w="437"
+       h="257"
+       page="13" />
     <group
        id="gradienteditor" />
     <group
@@ -648,16 +684,17 @@
        panel_border="0"
        x="0"
        y="0"
-       w="333"
-       h="424"
+       w="490"
+       h="564"
        visible="1"
-       state="2"
-       placement="5">
+       state="3"
+       placement="1">
       <group
          id="exportarea"
-         value="page" />
+         value="drawing" />
       <group
-         id="defaultxdpi" />
+         id="defaultxdpi"
+         value="43" />
     </group>
     <group
        id="save_as"
@@ -668,26 +705,28 @@
        use_current_dir="1" />
     <group
        id="save_copy"
-       default=""
+       default="org.inkscape.output.scour"
        append_extension="1"
        enable_preview="1"
-       path="" />
+       path="/home/daman/src/daeman.me/assets/images" />
     <group
        id="open"
        enable_preview="1"
-       path="/home/daman/img/" />
+       path="/home/daman/img/flags/" />
     <group
        id="import"
        enable_preview="1"
-       path=""
+       path="/home/daman/img/flags/"
        ask="1"
-       link="link"
-       scale="optimizeSpeed" />
+       link="embed"
+       scale="auto"
+       forcexdpi="0" />
     <group
        id="debug"
        redirect="0" />
     <group
-       id="clonetiler" />
+       id="clonetiler"
+       dotrace="0" />
     <group
        id="gridtiler" />
     <group
@@ -727,19 +766,19 @@
        on-blur="0.50"
        animate-time="100" />
     <group
-       placement="5"
-       state="2"
-       visible="1"
-       h="424"
-       w="333"
-       y="0"
-       x="0"
-       panel_border="0"
-       panel_wrap="0"
-       panel_mode="1"
-       panel_ratio="100"
+       id="objects"
        panel_size="1"
-       id="objects" />
+       panel_ratio="100"
+       panel_mode="1"
+       panel_wrap="0"
+       panel_border="0"
+       x="0"
+       y="0"
+       w="244"
+       h="437"
+       visible="1"
+       state="2"
+       placement="5" />
   </group>
   <group
      id="printing">
@@ -750,7 +789,9 @@
        add-label-comments="0" />
   </group>
   <group
-     id="options">
+     id="options"
+     dpifixbackup="1"
+     dpiupdatemethod="0">
     <group
        id="renderingcache"
        size="64" />
@@ -903,7 +944,7 @@
        value="2" />
     <group
        id="transform"
-       stroke="1"
+       stroke="0"
        rectcorners="1"
        pattern="1"
        gradient="1" />
@@ -957,6 +998,7 @@
        masks="65535" />
     <group
        id="svgoutput"
+       disable_optimizations="0"
        usenamedcolors="0"
        numericprecision="8"
        minimumexponent="-8"
@@ -1026,18 +1068,21 @@
        id="rendering" />
   </group>
   <group
-     id="extensions" />
+     id="extensions"
+     org.inkscape.output.scour.set-precision="5"
+     org.inkscape.output.scour.indent="space"
+     org.inkscape.output.scour.nindent="1" />
   <group
      id="desktop"
-     style="line-height:1.25;fill:#ffffff;fill-opacity:1;stroke:#a6afb8;stroke-opacity:1;stroke-width:20;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke fill markers">
+     style="line-height:1.25;fill:#1a1a1a;fill-opacity:1;stroke:#ffffff;stroke-opacity:1;stroke-width:60;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers fill stroke;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;text-anchor:middle;text-align:center;-inkscape-font-specification:'DejaVu Sans';font-family:'DejaVu Sans';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:64px">
     <group
-       width="640"
-       height="480"
-       x="0"
-       y="0"
+       width="941"
+       height="1014"
+       x="965"
+       y="52"
        fullscreen="0"
        id="geometry"
-       maximized="1" />
+       maximized="0" />
     <group
        id="XYfront" />
     <group
