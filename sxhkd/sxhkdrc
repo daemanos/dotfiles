@@ -67,10 +67,10 @@ super + ctrl + m ; {s,S}
     playerctl shuffle {Off,On}
 
 XF86Audio{Raise,Lower}Volume
-    amixer set Master 3%{+,-} && ~/.local/bin/vol_pop
+    pamixer -{i,d} 5 && ~/.local/bin/vol_pop
 
 XF86AudioMute
-    amixer -D pulse set Master 1+ toggle
+    pamixer -t
 
 
 # =================================================
