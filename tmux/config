@@ -176,8 +176,8 @@ bind-key -r + resize-pane -U 1
 bind-key -r = resize-pane -D 1
 
 # pane border color
-set -g pane-border-fg colour7
-set -g pane-active-border-fg colour7
+set -g pane-border-style fg=colour7
+set -g pane-active-border-style fg=colour7
 
 
 # Statusbar settings
@@ -202,21 +202,10 @@ setw -g window-status-format '[#I]'
 setw -g window-status-current-format '[#I]'
 
 # default statusbar colors
-set -g status-fg default
-set -g status-bg red
-set -g status-style default
-
-# window colors
-setw -g window-status-fg default
-setw -g window-status-bg default
-setw -g window-status-style default
+set -g status-style bg=black
 
 # selected window colors
-setw -g window-status-current-fg default
-setw -g window-status-current-bg default
-setw -g window-status-current-style bright
+setw -g window-status-current-style bold
 
 # command/message line colors
-set -g message-fg default
-set -g message-bg default
-set -g message-attr bright
+set -g message-style bold

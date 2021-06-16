@@ -8,6 +8,6 @@ source $HOME/.config/colors/colors.sh
 autoload colors && colors
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 PROMPT="%{$fg_bold[white]%}%(1j $fg[green] )>%{$fg[white]%}%(?  $fg[red])>%{$reset_color%} "
-RPROMPT="%{$fg_bold[black]%}%m:%~%{$reset_color%}"
+RPROMPT="%{$fg[white]%}%m:%~%{$reset_color%}"
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
 export _JAVA_AWT_WM_NONREPARENTING=1

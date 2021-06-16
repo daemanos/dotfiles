@@ -18,6 +18,12 @@ set splitright
 set exrc
 set secure
 
+" CtrlP settings
+let g:ctrlp_custom_ignore = {
+    \ 'dir':    '\v[\/](\.git|\.hg|\.svn|deps|node_modules|target)$',
+    \ 'file':   '\v\.so$|\v\.class$'
+    \ }
+
 " Goyo settings
 function! s:goyo_enter()
     silent !tmux set status off
@@ -43,6 +49,7 @@ set nowrap
 set wildignore+=*/build/**,*/tmp/*,*.so,*.swp,*.zip,*.aux
 set omnifunc=syntaxcomplete#Complete
 let g:syntastic_java_checkers = ['checkstyle']
+let g:syntastic_cpp_compiler_options = '-std=c++17'
 let g:esearch = {
             \ 'adapter': 'ag',
             \ 'backend': 'nvim',

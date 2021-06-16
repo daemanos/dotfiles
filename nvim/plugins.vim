@@ -2,6 +2,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Syntax highlighting
 Plug 'chriskempson/base16-vim'
+Plug 'arcticicestudio/nord-vim'
 Plug 'wting/rust.vim'
 Plug 'derekwyatt/vim-scala'
 Plug 'cespare/vim-toml'
@@ -11,6 +12,8 @@ Plug 'adimit/prolog.vim'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'ledger/vim-ledger'
 Plug 'tikhomirov/vim-glsl'
+Plug 'vim-scripts/SWIG-syntax'
+Plug 'jez/vim-better-sml'
 
 " Airline
 Plug 'vim-airline/vim-airline'

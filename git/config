@@ -3,11 +3,15 @@
 [user]
 	name = Daman Morris
 	email = damanm72@gmail.com
-;[credential]
-    ;helper = libsecret
+[credential]
+    helper = store
 [push]
 	default = simple
 [url "ssh://git@github.com/"]
     insteadOf = https://github.com/
     insteadOf = http://github.com/
     insteadOf = git://github.com/
+[pull]
+	rebase = false
+[http]
+	sslVerify = false

@@ -25,11 +25,35 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 <Multi_key> <O>          <slash>                : "∅"
 <Multi_key> <i>          <n>       <t>          : "∫"
 
+# Double acutes
+<Multi_key> <colon> <a>     : "a̋"
+<Multi_key> <colon> <A>     : "A̋"
+<Multi_key> <colon> <o>     : "ő"
+<Multi_key> <colon> <O>     : "Ő"
+<Multi_key> <colon> <u>     : "ű"
+<Multi_key> <colon> <U>     : "Ű"
+
 # IPA symbols
 <Multi_key> <at>    <h>     : "ʰ"
 <Multi_key> <at>    <j>     : "ʲ"
 <Multi_key> <at>    <w>     : "ʷ"
 <Multi_key> <at>    <colon> : "ː"
+
+# Hook letters
+<Multi_key> <at>    <b>     : "ɓ"
+<Multi_key> <at>    <B>     : "Ɓ"
+<Multi_key> <at>    <k>     : "ƙ"
+<Multi_key> <at>    <t>     : "ƭ"
+<Multi_key> <at>    <T>     : "Ƭ"
+<Multi_key> <at>    <d>     : "ɗ"
+<Multi_key> <at>    <D>     : "Ɗ"
+<Multi_key> <at>    <K>     : "Ƙ"
+<Multi_key> <at>    <g>     : "ɠ"
+<Multi_key> <at>    <G>     : "Ɠ"
+<Multi_key> <at>    <s>     : "ȿ"
+<Multi_key> <at>    <S>     : "Ȿ"
+<Multi_key> <at>    <z>     : "ȥ"
+<Multi_key> <at>    <Z>     : "Ȥ"
 
 # Thorn
 <Multi_key> <t> <h> <o> : "þ"

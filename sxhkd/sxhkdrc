@@ -6,7 +6,7 @@
 
 
 super + Return
-    urxvt
+    kitty
 
 super + w
     chromium
@@ -15,16 +15,13 @@ super + W
     chromium --incognito
 
 super + f
-    urxvt -e zsh -c ranger
-
-super + m
-    urxvt -e ncmpcpp
+    kitty /usr/bin/zsh -c ranger
 
 super + d
     ~/.local/bin/launcher
 
 ctrl + shift + k ; {g,e,a,h,c,j,r}
-    setxkbmap {gr,us,ara,il,cn,jp,ru}
+    setxkbmap {gr,us,ara,il,cn,jr,ru}
 
 ctrl + alt + p
     ~/.local/panel/panel &
@@ -33,7 +30,8 @@ ctrl + alt + k
     pkill -SIGUSR1 sxhkd
 
 super + shift + z
-    ~/.local/bin/lock
+    /usr/bin/dm-tool lock
+    #~/.local/bin/lock
 
 super + b
     ~/.local/bin/bat-notify2
@@ -143,7 +141,7 @@ super + @button{1-3}
 
 
 XF86MonBrightness{Down,Up}
-    sudo ~/.local/bin/lum {dec,inc} 100 && ~/.local/bin/lum_pop
+    sudo ~/.local/bin/lum {dec,inc} 10 && ~/.local/bin/lum_pop
 
 super + g ; {s,w,d}
     scrot {-s,-u,} -e 'mv $f ~/img/shots/'

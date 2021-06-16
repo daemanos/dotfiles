@@ -14,3 +14,17 @@
 *.vrb
 *.xdv
 sand/**/*
+po/*.po
+CMakeCache.txt
+*.cmake
+CMakeFiles/
+*.bbl
+*.dvi
+*.blg
+target/
+project/
+TODO
+*.du
+*.ud
+.gradle/
+build/
