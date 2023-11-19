@@ -1,0 +1,168 @@
+# Initial setup
+autoload -U compinit
+compinit
+
+zstyle ':completion:*:*:e:*' file-patterns '^*.(aux|log|pdf|aux|fls|fdb*):source-files' '*:all-files'
+
+export LC_ALL=$LANG
+export LC_CTYPE=UTF-8
+
+# Special directories
+export DOTFILES="$HOME/dotfiles"
+export ECLIPSE_HOME="/usr/share/eclipse"
+export TRASH="$HOME/.trash"
+export BIN="$HOME/.local/bin"
+export TEXMFHOME="$HOME/.texmf"
+
+# XDG base directories
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_DIRS="/usr/local/share:/usr/share"
+export XDG_CONFIG_DIRS="/etc/xdg"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+# Panel files
+export PANEL_HOME="$HOME/.local/panel"
+export PANEL_CONFIG="$PANEL_HOME/config"
+
+# Paths
+export MANPATH="/usr/local/man:/usr/local/git/man:$MANPATH"
+export PATH="bin:build/bin:$BIN:$PATH"
+export GEM_HOME=$HOME/.gem
+export PYTHONPATH="/home/daman/.local/lib/python:/home/daman/.local/lib/python3.6/site-packages"
+export LEDGER_FILE="$HOME/doc/finances.ledger"
+
+# Application defaults
+export EDITOR="nvim"
+export VISUAL="vim"
+export PAGER="less"
+export GIT_EDITOR="$EDITOR"
+export GEM_EDITOR="$EDITOR"
+export BROWSER="firefox"
+export FILE_MANAGER="ranger"
+export PDF_VIEWER="zathura"
+
+# File/directory operations
+alias mkdir='mkdir -pv'
+alias ds='du -hs'
+alias l='ls -hHF --color --group-directories-first'
+alias la='l -A'
+alias ll='l -l'
+alias lal='l -Al'
+alias lf='l -1 | wc -l'
+lh() { du -h $1/* | sort -hr; }
+alias ..='cd ..'
+alias ...='cd ../..'
+del() { mv -t $TRASH $1 }
+empty() { rm -r $1 && mkdir $1 >/dev/null }
+alias dus='du -hs $(find -mindepth 1 -maxdepth 1) 2>/dev/null | sort -hr'
+alias fm="$FILE_MANAGER"
+alias o="rifle"
+
+# For safety
+alias cp='cp -i'
+alias mv='mv -i'
+alias ln='ln -i'
+alias rm='rm -I'
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+alias rename='rename -i'
+
+# Pacman
+alias pacs='sudo pacman -S'
+alias pacu='sudo pacman -U'
+alias pacup='sudo pacman -Syu'
+alias pacul='sudo pacman -S linux linux-headers'
+alias pacr='sudo pacman -R'
+alias pacd='sudo pacman -Rs'
+alias pacq='pacman -Q'
+pacls() { pacman -Ql $1 | sed -r "s/^$1 (.*)$/\1/g" ; }
+alias paci='pacman -Qi'
+alias paco='pacman -Qtdq'
+alias pacoo='pacman -Qttdq'
+
+# Git
+#eval "$(hub alias -s)"
+alias gs='git status'
+alias go='git commit'
+alias gd='git diff'
+alias ga='git add'
+alias gcb='git checkout -b'
+
+# Configuration management
+alias conf='/usr/bin/git --git-dir="$HOME/.dotfiles" --work-tree="$HOME"'
+
+# Task
+alias t='task'
+alias ta='task add'
+alias fin='task done'
+alias tw='timew'
+
+# Systemd
+alias stl='sudo systemctl'
+alias snow='sudo systemctl enable --now'
+alias jtl='journalctl'
+
+# OpenVPN
+export OVPN_ROOT=/etc/openvpn
+ovpn() {
+    sudo openvpn "$OVPN_ROOT/$1.ovpn"
+}
+
+# Toilet
+toilet_sample() {
+    for fontfile in /usr/share/figlet/*; do
+        fontname="$(basename ${fontfile%.tlf})"
+        echo $fontname
+        toilet -f $fontname $1
+        echo
+    done
+}
+
+# Misc. system commands
+alias ping='ping -c 5'
+alias dmesg='dmesg -HL'
+alias cls=' echo -ne "\033c"' # clear the screen
+alias svim='vim --servername'
+alias clip='xclip -selection clipboard'
+alias c="cd"
+mc() { mkdir -p "$1" && cd "$1" ; }
+alias e="$EDITOR"
+alias ydl=youtube-dl
+alias x='exit'
+whee() { e "$(which $1)" }
+alias lk='luakit'
+if [ -n "$TMUX" ]; then
+    export TERM=screen-256color
+#else
+#    export TERM=xterm-256color
+fi
+
+# Colors and prompt
+source $HOME/.config/colors/colors.sh
+autoload colors && colors
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+setopt promptsubst
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git*' formats "(%b)"
+
+vcs_info_wrapper() {
+    vcs_info
+    if [[ -n "$vcs_info_msg_0_" ]]; then
+        STATUS=$(command git status --porcelain 2>/dev/null | tail -n1)
+        if [[ -n $STATUS ]]; then
+            color=red
+        else
+            color=green
+        fi
+        echo "%B%F{$color}$vcs_info_msg_0_ "
+    fi
+}
+
+PROMPT="\$(vcs_info_wrapper)%B%F{white}%(1j %F{green} )>%F{white}%(?  %F{red})>%f%b "
+RPROMPT="%F{19}%~%f"
+#export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+#export _JAVA_AWT_WM_NONREPARENTING=1
