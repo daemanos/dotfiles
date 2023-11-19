@@ -1,0 +1,26 @@
+[core]
+	excludesfile = ~/.config/git/ignore
+[user]
+	name = Daman Morris
+	email = damanm72@gmail.com
+[credential]
+    helper = store
+[push]
+	default = simple
+[pull]
+	rebase = false
+[http]
+	sslVerify = false
+[init]
+	defaultBranch = trunk
+
+# Github
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
+    insteadOf = http://github.com/
+    insteadOf = git://github.com/
+    insteadOf = hub://
+
+# AUR
+[url "https://aur.archlinux.org/"]
+    insteadOf = aur:
