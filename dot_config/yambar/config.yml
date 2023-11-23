@@ -1,0 +1,64 @@
+icon: &icon Font Awesome 6 Free:pixelsize=13
+bg_default: &bg_default {stack: [{background: {color: 5f7f5fff}}]}
+bar:
+  height: 40
+  location: top
+  font: PragmataPro Mono:pixelsize=12
+  spacing: 2
+  margin: 0
+  layer: bottom
+  foreground: dcdcdcff
+  background: 383838ff
+
+  left:
+    - river:
+        anchors:
+          - base: &river_base
+              left-margin: 10
+              right-margin: 12
+              default: {string: {text: , font: *icon}}
+              conditions:
+                id == 1: {string: {text: , font: *icon}}
+                id == 2: {string: {text: , font: *icon}}
+                id == 3: {string: {text: , font: *icon}}
+                id == 4: {string: {text: , font: *icon}}
+                id == 5: {string: {text: , font: *icon}}
+                id == 8: {string: {text: , font: *icon}}
+                id == 9: {string: {text: , font: *icon}}
+
+        content:
+          map:
+            on-click:
+              left: sh -c "riverctl set-focused-tags $((1 << ({id} - 1)))"
+              right: sh -c "riverctl toggle-focused-tags $((1 << ({id} -1)))"
+              middle: sh -c "riverctl toggle-view-tags $((1 << ({id} -1)))"
+            conditions:
+              state == urgent:
+                map:
+                  <<: *river_base
+                  deco: {background: {color: dca3a3ff}}
+              state == focused:
+                map:
+                  <<: *river_base
+                  deco: *bg_default
+              state == visible && ~occupied:
+                map:
+                  <<: *river_base
+              state == visible && occupied:
+                map:
+                  <<: *river_base
+                  deco: *bg_default
+              state == unfocused:
+                map:
+                  <<: *river_base
+              state == invisible && ~occupied: {empty: {}}
+              state == invisible && occupied:
+                map:
+                  <<: *river_base
+                  deco: {underline: {size: 3, color: 5f7f5fff}}
+
+  center:
+    - clock:
+        time-format: "%H:%M"
+        content:
+          - string: {text: "{time}"}
