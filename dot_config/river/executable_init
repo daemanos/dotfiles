@@ -2,13 +2,19 @@
 
 [ -e "$HOME/img/wall" ] && swaybg -i "$HOME/img/wall" &
 
+pkill yambar
+
+yambar &
+riverctl focus-output right
+#yambar &
+
 riverctl keyboard-layout -options compose:ralt us
 
 # Applications
 riverctl map normal Super+Shift Return spawn kitty
 riverctl map normal Super W spawn firefox
 riverctl map normal Super+Shift W spawn 'firefox --private-window'
-riverctl map normal Super+Shift F spawn kitty -e ranger
+riverctl map normal Super+Shift F spawn 'kitty -e ranger'
 riverctl map normal Super D spawn fuzzel
 
 # Super+Q to close the focused view

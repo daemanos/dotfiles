@@ -69,6 +69,11 @@ alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 alias rename='rename -i'
 
+# Chezmoi
+alias chezgs='chezmoi git status'
+alias chezgo='chezmoi git -- commit'
+alias chezga='chezmoi git add'
+
 # Pacman
 alias pacs='sudo pacman -S'
 alias pacu='sudo pacman -U'
@@ -81,6 +86,12 @@ pacls() { pacman -Ql $1 | sed -r "s/^$1 (.*)$/\1/g" ; }
 alias paci='pacman -Qi'
 alias paco='pacman -Qtdq'
 alias pacoo='pacman -Qttdq'
+
+# Cargo
+alias carr='cargo run'
+alias carb='cargo build'
+alias cart='cargo test'
+alias carch='cargo check'
 
 # Git
 #eval "$(hub alias -s)"
