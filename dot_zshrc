@@ -151,7 +151,7 @@ if [ -n "$TMUX" ]; then
 fi
 
 # Colors and prompt
-source $HOME/.config/colors/colors.sh
+#source $HOME/.config/colors/colors.sh
 autoload colors && colors
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -177,3 +177,6 @@ PROMPT="\$(vcs_info_wrapper)%B%F{white}%(1j %F{green} )>%F{white}%(?  %F{red})>%
 RPROMPT="%F{19}%~%f"
 #export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
 #export _JAVA_AWT_WM_NONREPARENTING=1
+
+# SSH Agent
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket

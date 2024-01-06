@@ -143,6 +143,11 @@ do
     riverctl map $mode None XF86MonBrightnessDown spawn 'light -U 5'
 done
 
+# Fallback MPRIS controls for keyboards w/o the requisite media keys
+riverctl map normal Super P spawn 'playerctl play-pause'
+riverctl map normal Super B spawn 'playerctl previous'
+riverctl map normal Super N spawn 'playerctl next'
+
 # Set background and border color
 riverctl background-color 0x002b36
 riverctl border-color-focused 0x93a1a1

@@ -33,6 +33,14 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 <Multi_key> <colon> <u>     : "ű"
 <Multi_key> <colon> <U>     : "Ű"
 
+# Diaresis + ogonek
+<Multi_key> <semicolon> <a> : "ą̈"
+<Multi_key> <semicolon> <A> : "Ą̈"
+<Multi_key> <semicolon> <o> : "ǫ̈"
+<Multi_key> <semicolon> <O> : "Ǫ̈"
+<Multi_key> <semicolon> <u> : "ų̈"
+<Multi_key> <semicolon> <U> : "Ų̈"
+
 # IPA symbols
 <Multi_key> <at>    <h>     : "ʰ"
 <Multi_key> <at>    <j>     : "ʲ"

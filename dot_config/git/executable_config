@@ -4,7 +4,7 @@
 	name = Daman Morris
 	email = damanm72@gmail.com
 [credential]
-    helper = store
+	helper = store
 [push]
 	default = simple
 [pull]
@@ -14,13 +14,20 @@
 [init]
 	defaultBranch = trunk
 
+# Codeberg
+[url "git@codeberg.org:"]
+	insteadOf = https://codeberg.org/
+	insteadOf = http://codeberg.org/
+	insteadOf = git://codeberg.org/
+	insteadOf = berg:
+
 # Github
 [url "ssh://git@github.com/"]
-    insteadOf = https://github.com/
-    insteadOf = http://github.com/
-    insteadOf = git://github.com/
-    insteadOf = hub://
+	insteadOf = https://github.com/
+	insteadOf = http://github.com/
+	insteadOf = git://github.com/
+	insteadOf = hub:
 
 # AUR
 [url "https://aur.archlinux.org/"]
-    insteadOf = aur:
+	insteadOf = aur:
